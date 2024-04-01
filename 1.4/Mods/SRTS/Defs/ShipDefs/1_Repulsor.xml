@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+<!--==========================================================================
+	A-A5 Heavy Speeder
+	==========================================================================-->
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-AA5HeavySpeeder_Incoming</defName>
+		<label>A-A5 Heavy Speeder Arriving</label>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-AA5HeavySpeeder_BomberRun</defName>
+		<label>A-A5 Heavy Speeder Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-AA5HeavySpeeder_Leaving</defName>
+		<label>A-A5 Heavy Speeder Leaving</label>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-AA5HeavySpeeder_Active</defName>
+		<label>A-A5 Heavy Speeder Active</label>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-AA5HeavySpeeder</defName>
+		<label>A-A5 Heavy Speeder</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>Trast Heavy Transports' A-A5 speeder truck was designed to transport heavy cargo across rough worlds, and was covered in armored plates to protect it and its cargo from harsh environmental conditions.
+
+		&#60;&#60;&#60; Crew &#62;&#62;&#62;
+		Required Flight Crew: 2
+		Max Crew: 10
+
+		&#60;&#60;&#60; Flight &#62;&#62;&#62;
+		Speed: 7
+		Fuel cap: 1000L
+		Fuel Usage: 5 per Tile
+		Cargo cap: 2500kg
+
+		&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+		Internal power plant: 250w</description>
+		<size>3,9</size>
+		<designatorDropdown>MM-SS-AA5HeavySpeeder_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>8850</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>1770</Mass>
+			<Beauty>0</Beauty>
+		</statBases>
+		<costList>
+			<Steel>1300</Steel>
+			<Plasteel>500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<Cloth>1100</Cloth>
+			<Silver>1500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>2500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>7</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>2</minPassengers>
+				<maxPassengers>10</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>1000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>1000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_Repulsor</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>43</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+</Defs>

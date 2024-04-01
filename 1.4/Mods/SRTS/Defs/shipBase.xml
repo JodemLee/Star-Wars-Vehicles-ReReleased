@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef Name="MM_Ship_Arrival_Base" ParentName="SkyfallerBase" Abstract="True">
+		<thingClass>SRTS.SRTSIncoming</thingClass>
+		<graphicData>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutFlying</shaderType>
+		  <drawSize>(10,10)</drawSize>
+		</graphicData>
+		<skyfaller>
+		  <movementType>Decelerate</movementType>
+		  <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		  <shadowSize>(8,12)</shadowSize>
+		  <anticipationSound>DropPod_Fall</anticipationSound>
+		  <anticipationSoundTicks>100</anticipationSoundTicks>
+		  <motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef Name="MM_Ship_Leaving_Base" ParentName="SkyfallerBase" Abstract="True">
+		<thingClass>SRTS.SRTSLeaving</thingClass>
+		<graphicData>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutFlying</shaderType>
+		  <drawSize>(10,10)</drawSize>
+		</graphicData>
+		<skyfaller>
+		  <movementType>Accelerate</movementType>
+		  <reversed>true</reversed>
+		  <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		  <shadowSize>(8,12)</shadowSize>
+		  <anticipationSound>Sound_Launch</anticipationSound>
+		  <anticipationSoundTicks>-10</anticipationSoundTicks>
+		  <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef Name="MM_Ship_Active_Base" Abstract="True">
+		<category>Item</category>
+		<thingClass>ActiveDropPod</thingClass>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(10,10)</drawSize>
+		  <shadowData>
+			<volume>(0.8, 0.6, 0.8)</volume>
+		  </shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>2400</MaxHitPoints>
+		  <Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+	</ThingDef>
+	
+	<ThingDef Name="MM_Ship_BomberSkyfaller_Base" ParentName="EtherealThingBase" Abstract="True">
+    <thingClass>BomberSkyfaller</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <skyfaller />
+	</ThingDef>
+	
+	<ThingDef Name="MM_ShipBase" ParentName="BuildingBase" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<statBases>
+		  <SellPriceFactor>0.70</SellPriceFactor>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+		  <li>Buildings</li>
+		</thingCategories>
+		<inspectorTabs>
+		  <li>ITab_ContentsTransporter</li>
+		</inspectorTabs>
+		<placeWorkers>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.90</fillPercent>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<killedLeavings>
+		  <ChunkSlagSteel>18</ChunkSlagSteel>
+		</killedLeavings>
+		<comps />
+   </ThingDef>
+  
+</Defs>

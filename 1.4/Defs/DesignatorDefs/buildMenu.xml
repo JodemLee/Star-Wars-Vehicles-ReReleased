@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>MM_StarWarsShipBuildTab</defName>
+    <label>Star Wars Ships</label>
+    <description>Star Wars Ships</description>
+    <order>0</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-AA5HeavySpeeder_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-EbonHawk_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-SupremacyMKVIStarfighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-XSFreighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-MantisPatrolCraft_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-BasiliskWarDroid_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-PhantomPrototype_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-SithInterceptor_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-FuryInterceptor_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-BT7Thunderclap_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-DefenderCorvette_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-AurekStrikefighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+		<defName>MM-SS-HammerheadCruiser_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Arc170_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Delta7Interceptor_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Eta2Interceptor_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-LAAT_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-V19Torrent_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-VWing_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-BTLBYWing_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-SoullessOne_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-DroidGunship_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-HyenaBomber_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-VultureDroidStarfighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Scimitar_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-SheathipedeShuttle_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-DroidLandingCraft_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-GX1ShortHauler_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-FangFighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-KomrkFighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-MoldyCrow_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-RavensClaw_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-TIEFighter_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-TIEBomber_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-LambdaShuttle_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Slave1-Def_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-RazorCrest_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-XWing_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-BTLS3YWing_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-UWing_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Ghost_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-MilleniumFalcon_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-Kimogila_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>MM-SS-M3AScyk_Designator</defName>
+	</DesignatorDropdownGroupDef>
+
+</Defs>

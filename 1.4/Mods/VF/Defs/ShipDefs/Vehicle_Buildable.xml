@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>MM-VF-AA5HeavySpeeder_Blueprint</defName>
+		<label>A-A5 Heavy Speeder VF</label>
+		<description>Trast Heavy Transports' A-A5 speeder truck was designed to transport heavy cargo across rough worlds, and was covered in armored plates to protect it and its cargo from harsh environmental conditions.\n\nA relatively general purpose helicopter, it has both excellent cargo and passenger capacity. Has some armour for an aircraft, allowing it to deploy and extract from hot zones.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<size>(3, 9)</size>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>8850</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>740</Steel>
+			<ComponentIndustrial>28</ComponentIndustrial>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-AA5HeavySpeeder</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>MM-VF-EbonHawk_Blueprint</defName>
+		<label>Ebon Hawk VF</label>
+		<description>An armoured transport aircraft, the Louie is a robust and agile mobile mode of transportation. Doesn’t require a landing strip and won’t fall apart at the first sign of fire.\n\nA relatively general purpose helicopter, it has both excellent cargo and passenger capacity. Has some armour for an aircraft, allowing it to deploy and extract from hot zones.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<size>(13, 14)</size>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24998</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>5800</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-EbonHawk</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+
+</Defs>

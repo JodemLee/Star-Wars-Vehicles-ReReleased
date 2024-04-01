@@ -1,0 +1,2052 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<!--==========================================================================
+	Ebon Hawk ==========================================================================-->
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-EbonHawk_Incoming</defName>
+		<label>Ebon Hawk Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-EbonHawk_BomberRun</defName>
+		<label>Ebon Hawk Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-EbonHawk_Leaving</defName>
+		<label>Ebon Hawk Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-EbonHawk_Active</defName>
+		<label>Ebon Hawk Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-EbonHawk</defName>
+		<label>Ebon Hawk</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Ebon Hawk was a Dynamic-class freighter and a smuggler ship. It was well-known throughout the galaxy. The ship was heavily modified over the course of its life, to the point that it was difficult to determine its origins. With its extremely powerful hyperdrive, the ship was believed to be the fastest ship in the Outer Rim Territories.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 2
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 40
+Fuel cap: 3000L
+Fuel Usage: 6 per Tile
+Cargo cap: 5000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w</description>
+		<size>13,14</size>
+		<designatorDropdown>MM-SS-EbonHawk_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24998</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5000</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>5800</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>5000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>40</travelSpeed>
+				<fuelPerTile>6</fuelPerTile>
+				<minPassengers>2</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>193</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<!--==========================================================================
+	Hammerhead Cruiser ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<ThingDef Name="MM-SS-HammerheadCruiser" ParentName="MM_ShipBase" Abstract="True">
+		<label>Hammerhead Cruiser</label>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(75,75)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+		</graphicData>
+		<description>The Hammerhead-class cruiser was a type of warship used by the Republic Navy. One of the most successful warship designs in galactic history, the Hammerhead-class would still see use in sector defense forces millennia after its introduction and would inspire many later ship designs.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 6
+Max Crew: 300
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 5
+Fuel cap: 10000L
+Fuel Usage: 20 per Tile
+Cargo cap: 250000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 2500w</description>
+		<size>30,65</size>
+		<designatorDropdown>MM-SS-HammerheadCruiser_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>7500</MaxHitPoints>
+			<WorkToBuild>326512</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>65302</Mass>
+			<Beauty>3</Beauty>
+		</statBases>
+		<costList>
+			<Steel>111250</Steel>
+			<Plasteel>3750</Plasteel>
+			<ComponentIndustrial>250</ComponentIndustrial>
+			<Cloth>33000</Cloth>
+			<Gold>6</Gold>
+			<Silver>15000</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>5</travelSpeed>
+				<fuelPerTile>20</fuelPerTile>
+				<minPassengers>6</minPassengers>
+				<maxPassengers>300</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>10000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>10000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-2500</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>3708</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<ThingDef Name="MM-SS-HammerheadCruiser_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Hammerhead Cruiser Prop</label>
+		<description>Hammerhead Cruiser Prop</description>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(75,75)</drawSize>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>30,65</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-HammerheadCruiser_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<!-- Hammerhead Cruiser (red) -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-HammerheadCruiser-red_Incoming</defName>
+		<label>Hammerhead Cruiser Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-HammerheadCruiser-red_BomberRun</defName>
+		<label>Hammerhead Cruiser Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-HammerheadCruiser-red_Leaving</defName>
+		<label>Hammerhead Cruiser Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-HammerheadCruiser-red_Active</defName>
+		<label>Hammerhead Cruiser Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-HammerheadCruiser">
+		<defName>MM-SS-HammerheadCruiser-red</defName>
+		<label>Hammerhead Cruiser (red)</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-HammerheadCruiser_prop">
+		<defName>MM-SS-HammerheadCruiser-red_prop</defName>
+		<label>Hammerhead Cruiser (red) Prop</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<!-- Hammerhead Cruiser (blue) -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-HammerheadCruiser-blue_Incoming</defName>
+		<label>Hammerhead Cruiser Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-HammerheadCruiser-blue_BomberRun</defName>
+		<label>Hammerhead Cruiser Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_blue</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-HammerheadCruiser-blue_Leaving</defName>
+		<label>Hammerhead Cruiser Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-HammerheadCruiser-blue_Active</defName>
+		<label>Hammerhead Cruiser Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-HammerheadCruiser">
+		<defName>MM-SS-HammerheadCruiser-blue</defName>
+		<label>Hammerhead Cruiser (blue)</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-HammerheadCruiser_prop">
+		<defName>MM-SS-HammerheadCruiser-blue_prop</defName>
+		<label>Hammerhead Cruiser (blue) Prop</label>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+"	<!--==========================================================================
+	Aurek Strikefighter ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<ThingDef Name="MM-SS-AurekStrikefighter" ParentName="MM_ShipBase" Abstract="True">
+		<label>Aurek Strikefighter</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Aurek-class tactical strikefighter, also known as the original A-wing, was a Republic starfighter, several models of which were used in the Old Sith Wars, the Great Galactic War, the New Sith Wars, and even until the final generation of the Republic.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 50w
+Bombs: 3</description>
+		<size>3,5</size>
+		<designatorDropdown>MM-SS-AurekStrikefighter_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>4158</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>832</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>438</Steel>
+			<Plasteel>750</Plasteel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>110</Cloth>
+			<Gold>20</Gold>
+			<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>3</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>3</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-50</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>15</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<ThingDef Name="MM-SS-AurekStrikefighter_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Aurek Strikefighter Prop</label>
+		<description>Aurek Strikefighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-AurekStrikefighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+	<!-- Aurek Strikefighter (red) -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-AurekStrikefighter-red_Incoming</defName>
+		<label>Aurek Strikefighter Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-AurekStrikefighter-red_BomberRun</defName>
+		<label>Aurek Strikefighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-AurekStrikefighter-red_Leaving</defName>
+		<label>Aurek Strikefighter Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-AurekStrikefighter-red_Active</defName>
+		<label>Aurek Strikefighter Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-AurekStrikefighter">
+		<defName>MM-SS-AurekStrikefighter-red</defName>
+		<label>Aurek Strikefighter (red)</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-AurekStrikefighter_prop">
+		<defName>MM-SS-AurekStrikefighter-red_prop</defName>
+		<label>Aurek Strikefighter (red) Prop</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<!-- Aurek Strikefighter (blue) -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-AurekStrikefighter-blue_Incoming</defName>
+		<label>Aurek Strikefighter Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-AurekStrikefighter-blue_BomberRun</defName>
+		<label>Aurek Strikefighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_blue</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-AurekStrikefighter-blue_Leaving</defName>
+		<label>Aurek Strikefighter Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-AurekStrikefighter-blue_Active</defName>
+		<label>Aurek Strikefighter Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-AurekStrikefighter">
+		<defName>MM-SS-AurekStrikefighter-blue</defName>
+		<label>Aurek Strikefighter (blue)</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM-SS-AurekStrikefighter_prop">
+		<defName>MM-SS-AurekStrikefighter-blue_prop</defName>
+		<label>Aurek Strikefighter (blue) Prop</label>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<!--==========================================================================
+	Defender Corvette ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-DefenderCorvette_Incoming</defName>
+		<label>Defender Corvette Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-DefenderCorvette_BomberRun</defName>
+		<label>Defender Corvette Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-DefenderCorvette_Leaving</defName>
+		<label>Defender Corvette Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-DefenderCorvette_Active</defName>
+		<label>Defender Corvette Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-DefenderCorvette</defName>
+		<label>Defender Corvette</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Defender-class light corvette was produced specifically for use by Jedi as a mobile operations base and a capable starfighter in its own right. The corvette could be flown by a single pilot.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 3000L
+Fuel Usage: 5 per Tile
+Cargo cap: 3000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 6</description>
+		<size>13,17</size>
+		<designatorDropdown>MM-SS-DefenderCorvette_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>26018</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5204</Mass>
+			<Beauty>20</Beauty>
+		</statBases>
+		<costList>
+			<Steel>6275</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>31</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>40</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>3000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>209</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	<!--==========================================================================
+	BT-7 Thunderclap ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-BT7Thunderclap_Incoming</defName>
+		<label>BT-7 Thunderclap Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-BT7Thunderclap_BomberRun</defName>
+		<label>BT-7 Thunderclap Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-BT7Thunderclap_Leaving</defName>
+		<label>BT-7 Thunderclap Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-BT7Thunderclap_Active</defName>
+		<label>BT-7 Thunderclap Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-BT7Thunderclap</defName>
+		<label>BT-7 Thunderclap</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The BT-7 Thunderclap was an assault ship model in the Republic Military, commonly used by Republic troopers.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 4
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 3000L
+Fuel Usage: 5 per Tile
+Cargo cap: 3000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 8</description>
+		<size>15,11</size>
+		<designatorDropdown>MM-SS-BT7Thunderclap_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>22722</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4544</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>4875</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>33</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>440</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>8</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>8</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>3000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>4</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>162</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	<!--==========================================================================
+	Fury Interceptor ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-FuryInterceptor_Incoming</defName>
+		<label>Fury Interceptor Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-FuryInterceptor_BomberRun</defName>
+		<label>Fury Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-FuryInterceptor_Leaving</defName>
+		<label>Fury Interceptor Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-FuryInterceptor_Active</defName>
+		<label>Fury Interceptor Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-FuryInterceptor</defName>
+		<label>Fury Interceptor</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Fury-class Imperial Interceptor was a starship used by the reconstituted Sith Empire during the Great Galactic War and its resultant Cold War.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 3000L
+Fuel Usage: 5 per Tile
+Cargo cap: 3000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 8</description>
+		<size>11,13</size>
+		<designatorDropdown>MM-SS-FuryInterceptor_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>22082</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4416</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>4325</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>33</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>20</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>8</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>8</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>3000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>144</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<!--==========================================================================
+	Sith Interceptor ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-SithInterceptor_Incoming</defName>
+		<label>Sith Interceptor Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-SithInterceptor_BomberRun</defName>
+		<label>Sith Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-SithInterceptor_Leaving</defName>
+		<label>Sith Interceptor Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-SithInterceptor_Active</defName>
+		<label>Sith Interceptor Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-SithInterceptor</defName>
+		<label>Sith Interceptor</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Sith Interceptor, was a starfighter that formed the bulk of Darth Revan and Darth Malak's space forces during the Jedi Civil War. A single-seater fighter that had not been designed with the comfort or safety of the pilot in mind.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 50w
+Bombs: 3</description>
+		<size>3,5</size>
+		<designatorDropdown>MM-SS-SithInterceptor_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>4138</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>828</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>438</Steel>
+			<Plasteel>750</Plasteel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>110</Cloth>
+			<Gold>10</Gold>
+			<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>3</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>3</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-50</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>15</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<!--==========================================================================
+	Phantom Prototype ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-PhantomPrototype_Incoming</defName>
+		<label>Phantom Prototype Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-PhantomPrototype_BomberRun</defName>
+		<label>Phantom Prototype Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-PhantomPrototype_Leaving</defName>
+		<label>Phantom Prototype Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-PhantomPrototype_Active</defName>
+		<label>Phantom Prototype Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-PhantomPrototype</defName>
+		<label>Phantom Prototype</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The X-70B Phantom-class prototype was a prototype starship of the reconstituted Sith Empire used by Imperial Intelligence. The sleek appearance of the X-70B Phantom was designed to pass for a civilian luxury shuttle, despite its array of hidden components. Its bridge was shielded by the forward armor plating, and was equipped with advanced, precision flight instruments.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 38
+Fuel cap: 3000L
+Fuel Usage: 4 per Tile
+Cargo cap: 3000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 1000w
+Bombs: 6</description>
+		<size>15,17</size>
+		<designatorDropdown>MM-SS-PhantomPrototype_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>26388</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5278</Mass>
+			<Beauty>25</Beauty>
+		</statBases>
+		<costList>
+			<Steel>7125</Steel>
+			<Plasteel>750</Plasteel>
+			<ComponentIndustrial>106</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>50</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>3000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>38</travelSpeed>
+				<fuelPerTile>4</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>238</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	<!--==========================================================================
+	Basilisk War Droid ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-BasiliskWarDroid_Incoming</defName>
+		<label>Basilisk War Droid Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-BasiliskWarDroid_BomberRun</defName>
+		<label>Basilisk War Droid Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-BasiliskWarDroid_Leaving</defName>
+		<label>Basilisk War Droid Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-BasiliskWarDroid_Active</defName>
+		<label>Basilisk War Droid Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-BasiliskWarDroid</defName>
+		<label>Basilisk War Droid</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Basilisk War Droids were a fearsome, heavily armored, semi-sentient, four-legged droids used by the Mandalorian Crusaders.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 0
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 25
+Fuel cap: 3000L
+Fuel Usage: 5 per Tile
+Cargo cap: 500kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 500w
+Bombs: 10</description>
+		<size>12,11</size>
+		<designatorDropdown>MM-SS-BasiliskWarDroid_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>5000</MaxHitPoints>
+			<WorkToBuild>22306</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4461</Mass>
+			<Beauty>3</Beauty>
+		</statBases>
+		<costList>
+			<Steel>3425</Steel>
+			<Plasteel>2500</Plasteel>
+			<ComponentIndustrial>60</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>6</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>10</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>10</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>25</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>0</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-500</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>114</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	<!--==========================================================================
+	Mantis Patrol Craft ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-MantisPatrolCraft_Incoming</defName>
+		<label>Mantis Patrol Craft Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-MantisPatrolCraft_BomberRun</defName>
+		<label>Mantis Patrol Craft Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-MantisPatrolCraft_Leaving</defName>
+		<label>Mantis Patrol Craft Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-MantisPatrolCraft_Active</defName>
+		<label>Mantis Patrol Craft Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-MantisPatrolCraft</defName>
+		<label>Mantis Patrol Craft</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>Built for combat, the rare, compact-framed D5-Mantis was a best-in-class patrol craft, designed to compete with much larger starships, such as Interdictor-class cruisers.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 3000L
+Fuel Usage: 5 per Tile
+Cargo cap: 3000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 6</description>
+		<size>13,14</size>
+		<designatorDropdown>MM-SS-MantisPatrolCraft_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24028</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4806</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>5300</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>31</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>20</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>3000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>177</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	<!--==========================================================================
+	XS Freighter ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-XSFreighter_Incoming</defName>
+		<label>XS Freighter Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/xs/xs</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-XSFreighter_BomberRun</defName>
+		<label>XS Freighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/xs/xs</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-XSFreighter_Leaving</defName>
+		<label>XS Freighter Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/xs/xs</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-XSFreighter_Active</defName>
+		<label>XS Freighter Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/xs/xs</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-XSFreighter</defName>
+		<label>XS Freighter</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/xs/xs</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The XS stock light freighter was considered a major advancement in armament, speed and versatility over previous models of light freighter. It was considered one of the fastest and most agile starships in the galaxy.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 3000L
+Fuel Usage: 6 per Tile
+Cargo cap: 5000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w</description>
+		<size>12,14</size>
+		<designatorDropdown>MM-SS-XSFreighter_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24296</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4859</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>5450</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>5000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>6</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>182</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	<!--==========================================================================
+	Supremacy (MKVI) Starfighter ==========================================================================-->
+	<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+	<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base">
+		<defName>MM-SS-SupremacyMKVIStarfighter_Incoming</defName>
+		<label>Supremacy (MKVI) Starfighter Arriving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-SupremacyMKVIStarfighter_BomberRun</defName>
+		<label>Supremacy (MKVI) Starfighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>0.85</speed>
+			<movementType>ConstantSpeed</movementType>
+			<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+			<shadowSize>(6,6)</shadowSize>
+			<anticipationSound>DropPod_Fall</anticipationSound>
+			<anticipationSoundTicks>100</anticipationSoundTicks>
+			<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-SupremacyMKVIStarfighter_Leaving</defName>
+		<label>Supremacy (MKVI) Starfighter Leaving</label>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-SupremacyMKVIStarfighter_Active</defName>
+		<label>Supremacy (MKVI) Starfighter Active</label>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+	<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-SupremacyMKVIStarfighter</defName>
+		<label>Supremacy (MKVI) Starfighter</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Mark VI Supremacy-class starfighter, also known as the ISF interceptor or simply the Mk. VI interceptor, was a model of fighter used by the reconstituted Sith Empire during the Great Galactic War.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 37
+Fuel cap: 750L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 8</description>
+		<size>5,5</size>
+		<designatorDropdown>MM-SS-SupremacyMKVIStarfighter_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>5946</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>1189</Mass>
+			<Beauty>7</Beauty>
+		</statBases>
+		<costList>
+			<Steel>688</Steel>
+			<Plasteel>1000</Plasteel>
+			<ComponentIndustrial>33</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Cloth>110</Cloth>
+			<Gold>14</Gold>
+			<Silver>1125</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway">				<!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>8</numberBombs>				<!-- num dropped per run -->
+				<precisionBombingNumBombs>8</precisionBombingNumBombs>				<!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop>				<!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed>				<!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops>				<!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>37</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>750</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>23</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+</Defs>
