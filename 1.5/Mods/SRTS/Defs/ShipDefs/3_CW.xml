@@ -1,0 +1,3888 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+"<!--==========================================================================
+	Arc-170
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-Arc170" ParentName="MM_ShipBase" Abstract="True">
+		<label>Arc-170</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(9,9)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Aggressive ReConnaissance-170 starfighter was a multipurpose starship designed for both intense battle and longer deep-space missions. It measured 12.71 meters in length, contained a hyperdrive, and propelled itself in realspace utilizing two powerful engine systems. Long-range scanners and sensors were contained in the vessel's nose.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 3
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 30
+Fuel cap: 3500L
+Fuel Usage: 4 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 8</description>
+		<size>9,6</size>
+		<designatorDropdown>MM-SS-Arc170_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1750</MaxHitPoints>
+			<WorkToBuild>15828</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>3166</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>1413</Steel>
+<Plasteel>875</Plasteel>
+<ComponentIndustrial>33</ComponentIndustrial>
+<ComponentSpacer>3</ComponentSpacer>
+<Cloth>330</Cloth>
+<Gold>10</Gold>
+<Silver>5250</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>8</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>8</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>30</travelSpeed>
+				<fuelPerTile>4</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>3</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>3500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>3500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>47</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-Arc170_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Arc-170 Prop</label>
+		<description>Arc-170 Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(9,9)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>9,6</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Arc170_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- Arc-170 (Red) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Arc170-Red_Incoming</defName>
+		<label>Arc-170 Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Arc170-Red_BomberRun</defName>
+		<label>Arc-170 Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Arc170-Red_Leaving</defName>
+		<label>Arc-170 Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Arc170-Red_Active</defName>
+		<label>Arc-170 Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Arc170">
+		<defName>MM-SS-Arc170-Red</defName>
+		<label>Arc-170 (Red)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Arc170_prop">
+		<defName>MM-SS-Arc170-Red_prop</defName>
+		<label>Arc-170 (Red) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Arc-170 (Blue) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Arc170-Blue_Incoming</defName>
+		<label>Arc-170 Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Arc170-Blue_BomberRun</defName>
+		<label>Arc-170 Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Blue</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Arc170-Blue_Leaving</defName>
+		<label>Arc-170 Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Arc170-Blue_Active</defName>
+		<label>Arc-170 Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Arc170">
+		<defName>MM-SS-Arc170-Blue</defName>
+		<label>Arc-170 (Blue)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Arc170_prop">
+		<defName>MM-SS-Arc170-Blue_prop</defName>
+		<label>Arc-170 (Blue) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Arc170/Arc170_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+"<!--==========================================================================
+	Delta-7 Interceptor
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-Delta7Interceptor" ParentName="MM_ShipBase" Abstract="True">
+		<label>Delta-7 Interceptor</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>Manufactured by Kuat Systems Engineering, the Delta-7 Aethersprite-class light interceptor was a Jedi-used starfighter that saw extensive action during the last years of the Galactic Republic, and was designed specifically with the Jedi in mind.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 40
+Fuel cap: 500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 4</description>
+		<size>3,5</size>
+		<designatorDropdown>MM-SS-Delta7Interceptor_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1750</MaxHitPoints>
+			<WorkToBuild>4452</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>890</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>438</Steel>
+<Plasteel>875</Plasteel>
+<ComponentIndustrial>29</ComponentIndustrial>
+<ComponentSpacer>4</ComponentSpacer>
+<Cloth>110</Cloth>
+<Gold>20</Gold>
+<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>4</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>4</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>40</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>15</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-Delta7Interceptor_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Delta-7 Interceptor Prop</label>
+		<description>Delta-7 Interceptor Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Delta7Interceptor_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- Delta-7 Interceptor (Green) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Delta7Interceptor-Green_Incoming</defName>
+		<label>Delta-7 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Green</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Delta7Interceptor-Green_BomberRun</defName>
+		<label>Delta-7 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Green</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Delta7Interceptor-Green_Leaving</defName>
+		<label>Delta-7 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Green</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Delta7Interceptor-Green_Active</defName>
+		<label>Delta-7 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Green</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor">
+		<defName>MM-SS-Delta7Interceptor-Green</defName>
+		<label>Delta-7 Interceptor (Green)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Green</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor_prop">
+		<defName>MM-SS-Delta7Interceptor-Green_prop</defName>
+		<label>Delta-7 Interceptor (Green) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Green</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Delta-7 Interceptor (Pur) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Delta7Interceptor-Pur_Incoming</defName>
+		<label>Delta-7 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Delta7Interceptor-Pur_BomberRun</defName>
+		<label>Delta-7 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Pur</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Delta7Interceptor-Pur_Leaving</defName>
+		<label>Delta-7 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Delta7Interceptor-Pur_Active</defName>
+		<label>Delta-7 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor">
+		<defName>MM-SS-Delta7Interceptor-Pur</defName>
+		<label>Delta-7 Interceptor (Pur)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor_prop">
+		<defName>MM-SS-Delta7Interceptor-Pur_prop</defName>
+		<label>Delta-7 Interceptor (Pur) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Delta-7 Interceptor (Red) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Delta7Interceptor-Red_Incoming</defName>
+		<label>Delta-7 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Delta7Interceptor-Red_BomberRun</defName>
+		<label>Delta-7 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Delta7Interceptor-Red_Leaving</defName>
+		<label>Delta-7 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Delta7Interceptor-Red_Active</defName>
+		<label>Delta-7 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor">
+		<defName>MM-SS-Delta7Interceptor-Red</defName>
+		<label>Delta-7 Interceptor (Red)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor_prop">
+		<defName>MM-SS-Delta7Interceptor-Red_prop</defName>
+		<label>Delta-7 Interceptor (Red) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Delta-7 Interceptor (Yellow) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Delta7Interceptor-Yellow_Incoming</defName>
+		<label>Delta-7 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Delta7Interceptor-Yellow_BomberRun</defName>
+		<label>Delta-7 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Yellow</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Delta7Interceptor-Yellow_Leaving</defName>
+		<label>Delta-7 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Delta7Interceptor-Yellow_Active</defName>
+		<label>Delta-7 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor">
+		<defName>MM-SS-Delta7Interceptor-Yellow</defName>
+		<label>Delta-7 Interceptor (Yellow)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Delta7Interceptor_prop">
+		<defName>MM-SS-Delta7Interceptor-Yellow_prop</defName>
+		<label>Delta-7 Interceptor (Yellow) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Delta7/Delta7_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+
+"<!--==========================================================================
+	Eta-2 Interceptor
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-Eta2Interceptor" ParentName="MM_ShipBase" Abstract="True">
+		<label>Eta-2 Interceptor</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>Measuring 5.47 meters in length,the Eta-2 was a highly maneuverable combat-oriented starfighter utilized by the Jedi Order to lead troops in battle during the final days of the Clone Wars.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 45
+Fuel cap: 500L
+Fuel Usage: 4 per Tile
+Cargo cap: 100kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 300w
+Bombs: 6</description>
+		<size>3,5</size>
+		<designatorDropdown>MM-SS-Eta2Interceptor_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1800</MaxHitPoints>
+			<WorkToBuild>4448</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>890</Mass>
+			<Beauty>12</Beauty>
+		</statBases>
+		<costList>
+			<Steel>400</Steel>
+<Plasteel>900</Plasteel>
+<ComponentIndustrial>36</ComponentIndustrial>
+<ComponentSpacer>4</ComponentSpacer>
+<Cloth>110</Cloth>
+<Gold>24</Gold>
+<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>100</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>45</travelSpeed>
+				<fuelPerTile>4</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-300</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>13</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-Eta2Interceptor_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Eta-2 Interceptor Prop</label>
+		<description>Eta-2 Interceptor Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Eta2Interceptor_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- Eta-2 Interceptor (Green) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Eta2Interceptor-Green_Incoming</defName>
+		<label>Eta-2 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Green</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Eta2Interceptor-Green_BomberRun</defName>
+		<label>Eta-2 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Green</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Eta2Interceptor-Green_Leaving</defName>
+		<label>Eta-2 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Green</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Eta2Interceptor-Green_Active</defName>
+		<label>Eta-2 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Green</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor">
+		<defName>MM-SS-Eta2Interceptor-Green</defName>
+		<label>Eta-2 Interceptor (Green)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Green</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor_prop">
+		<defName>MM-SS-Eta2Interceptor-Green_prop</defName>
+		<label>Eta-2 Interceptor (Green) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Green</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Eta-2 Interceptor (Pur) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Eta2Interceptor-Pur_Incoming</defName>
+		<label>Eta-2 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Eta2Interceptor-Pur_BomberRun</defName>
+		<label>Eta-2 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Pur</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Eta2Interceptor-Pur_Leaving</defName>
+		<label>Eta-2 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Eta2Interceptor-Pur_Active</defName>
+		<label>Eta-2 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor">
+		<defName>MM-SS-Eta2Interceptor-Pur</defName>
+		<label>Eta-2 Interceptor (Pur)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor_prop">
+		<defName>MM-SS-Eta2Interceptor-Pur_prop</defName>
+		<label>Eta-2 Interceptor (Pur) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Pur</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Eta-2 Interceptor (Red) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Eta2Interceptor-Red_Incoming</defName>
+		<label>Eta-2 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Eta2Interceptor-Red_BomberRun</defName>
+		<label>Eta-2 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Eta2Interceptor-Red_Leaving</defName>
+		<label>Eta-2 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Eta2Interceptor-Red_Active</defName>
+		<label>Eta-2 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor">
+		<defName>MM-SS-Eta2Interceptor-Red</defName>
+		<label>Eta-2 Interceptor (Red)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor_prop">
+		<defName>MM-SS-Eta2Interceptor-Red_prop</defName>
+		<label>Eta-2 Interceptor (Red) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Eta-2 Interceptor (Yellow) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Eta2Interceptor-Yellow_Incoming</defName>
+		<label>Eta-2 Interceptor Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Eta2Interceptor-Yellow_BomberRun</defName>
+		<label>Eta-2 Interceptor Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Yellow</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Eta2Interceptor-Yellow_Leaving</defName>
+		<label>Eta-2 Interceptor Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Eta2Interceptor-Yellow_Active</defName>
+		<label>Eta-2 Interceptor Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor">
+		<defName>MM-SS-Eta2Interceptor-Yellow</defName>
+		<label>Eta-2 Interceptor (Yellow)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-Eta2Interceptor_prop">
+		<defName>MM-SS-Eta2Interceptor-Yellow_prop</defName>
+		<label>Eta-2 Interceptor (Yellow) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Eta2/Eta2_Yellow</texPath>
+		</graphicData>
+	</ThingDef>
+
+"<!--==========================================================================
+	LAAT
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-LAAT" ParentName="MM_ShipBase" Abstract="True">
+		<label>LAAT</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The LAAT series of gunships was designed to transport and support up to 30 clone troopers in combat. It also had a rear hangar that could hold up to four speeder bikes for reconnaissance operations or search-and-rescue missions. Early LAAT were in-atmosphere-only vehicles, requiring their transporting cruisers to land somewhere on the planet or at least enter its atmosphere in order to launch. Later versions allowed the gunship to fly through space and actually be used for boarding in ship-to-ship battles.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 2
+Max Crew: 15
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 25
+Fuel cap: 5000L
+Fuel Usage: 10 per Tile
+Cargo cap: 1500kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 500w
+Bombs: 4</description>
+		<size>9,9</size>
+		<designatorDropdown>MM-SS-LAAT_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>25232</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5046</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>2400</Steel>
+<Plasteel>1000</Plasteel>
+<ComponentIndustrial>54</ComponentIndustrial>
+<ComponentSpacer>2</ComponentSpacer>
+<Cloth>1650</Cloth>
+<Gold>10</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>4</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>4</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>1500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>25</travelSpeed>
+				<fuelPerTile>10</fuelPerTile>
+				<minPassengers>2</minPassengers>
+				<maxPassengers>15</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-500</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>80</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-LAAT_prop" ParentName="BuildingBase" Abstract="True">
+		<label>LAAT Prop</label>
+		<description>LAAT Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>9,9</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-LAAT_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- LAAT (Red) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-LAAT-Red_Incoming</defName>
+		<label>LAAT Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-LAAT-Red_BomberRun</defName>
+		<label>LAAT Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-LAAT-Red_Leaving</defName>
+		<label>LAAT Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-LAAT-Red_Active</defName>
+		<label>LAAT Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-LAAT">
+		<defName>MM-SS-LAAT-Red</defName>
+		<label>LAAT (Red)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-LAAT_prop">
+		<defName>MM-SS-LAAT-Red_prop</defName>
+		<label>LAAT (Red) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- LAAT (Blue) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-LAAT-Blue_Incoming</defName>
+		<label>LAAT Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-LAAT-Blue_BomberRun</defName>
+		<label>LAAT Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Blue</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-LAAT-Blue_Leaving</defName>
+		<label>LAAT Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-LAAT-Blue_Active</defName>
+		<label>LAAT Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-LAAT">
+		<defName>MM-SS-LAAT-Blue</defName>
+		<label>LAAT (Blue)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-LAAT_prop">
+		<defName>MM-SS-LAAT-Blue_prop</defName>
+		<label>LAAT (Blue) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Laat/Laat_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+"<!--==========================================================================
+	V-19 Torrent
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-V19Torrent" ParentName="MM_ShipBase" Abstract="True">
+		<label>V-19 Torrent</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The V-19 Torrent starfighter was an assault fighter with exceptional speed and maneuverability.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 45
+Fuel cap: 500L
+Fuel Usage: 4 per Tile
+Cargo cap: 500kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 300w
+Bombs: 6</description>
+		<size>5,4</size>
+		<designatorDropdown>MM-SS-V19Torrent_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1800</MaxHitPoints>
+			<WorkToBuild>4878</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>976</Mass>
+			<Beauty>7</Beauty>
+		</statBases>
+		<costList>
+			<Steel>625</Steel>
+<Plasteel>900</Plasteel>
+<ComponentIndustrial>36</ComponentIndustrial>
+<ComponentSpacer>4</ComponentSpacer>
+<Cloth>110</Cloth>
+<Gold>14</Gold>
+<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>45</travelSpeed>
+				<fuelPerTile>4</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-300</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>21</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-V19Torrent_prop" ParentName="BuildingBase" Abstract="True">
+		<label>V-19 Torrent Prop</label>
+		<description>V-19 Torrent Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,4</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-V19Torrent_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- V-19 Torrent (Red) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-V19Torrent-Red_Incoming</defName>
+		<label>V-19 Torrent Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-V19Torrent-Red_BomberRun</defName>
+		<label>V-19 Torrent Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-V19Torrent-Red_Leaving</defName>
+		<label>V-19 Torrent Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-V19Torrent-Red_Active</defName>
+		<label>V-19 Torrent Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-V19Torrent">
+		<defName>MM-SS-V19Torrent-Red</defName>
+		<label>V-19 Torrent (Red)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-V19Torrent_prop">
+		<defName>MM-SS-V19Torrent-Red_prop</defName>
+		<label>V-19 Torrent (Red) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- V-19 Torrent (Blue) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-V19Torrent-Blue_Incoming</defName>
+		<label>V-19 Torrent Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-V19Torrent-Blue_BomberRun</defName>
+		<label>V-19 Torrent Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Blue</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-V19Torrent-Blue_Leaving</defName>
+		<label>V-19 Torrent Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-V19Torrent-Blue_Active</defName>
+		<label>V-19 Torrent Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-V19Torrent">
+		<defName>MM-SS-V19Torrent-Blue</defName>
+		<label>V-19 Torrent (Blue)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-V19Torrent_prop">
+		<defName>MM-SS-V19Torrent-Blue_prop</defName>
+		<label>V-19 Torrent (Blue) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Torrent/Torrent_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+"<!--==========================================================================
+	V-Wing
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-VWing" ParentName="MM_ShipBase" Abstract="True">
+		<label>V-Wing</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Alpha-3 Nimbus-class starfighter was a sharp and wedge-shaped fighter. Manufactured by Kuat Systems Engineering, the same company that made Jedi starfighters, V-wings were agile and fast, with the ship having a top speed of 52,000 kilometers per hour and maximum acceleration of 5,200G's.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 50
+Fuel cap: 500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 6</description>
+		<size>3,6</size>
+		<designatorDropdown>MM-SS-VWing_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>4858</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>972</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>513</Steel>
+<Plasteel>1000</Plasteel>
+<ComponentIndustrial>31</ComponentIndustrial>
+<ComponentSpacer>5</ComponentSpacer>
+<Cloth>110</Cloth>
+<Gold>20</Gold>
+<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>50</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>17</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-VWing_prop" ParentName="BuildingBase" Abstract="True">
+		<label>V-Wing Prop</label>
+		<description>V-Wing Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,6</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-VWing_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- V-Wing (Red) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-VWing-Red_Incoming</defName>
+		<label>V-Wing Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-VWing-Red_BomberRun</defName>
+		<label>V-Wing Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Red</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-VWing-Red_Leaving</defName>
+		<label>V-Wing Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-VWing-Red_Active</defName>
+		<label>V-Wing Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VWing">
+		<defName>MM-SS-VWing-Red</defName>
+		<label>V-Wing (Red)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Red</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VWing_prop">
+		<defName>MM-SS-VWing-Red_prop</defName>
+		<label>V-Wing (Red) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Red</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- V-Wing (Blue) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-VWing-Blue_Incoming</defName>
+		<label>V-Wing Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-VWing-Blue_BomberRun</defName>
+		<label>V-Wing Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Blue</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-VWing-Blue_Leaving</defName>
+		<label>V-Wing Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-VWing-Blue_Active</defName>
+		<label>V-Wing Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VWing">
+		<defName>MM-SS-VWing-Blue</defName>
+		<label>V-Wing (Blue)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VWing_prop">
+		<defName>MM-SS-VWing-Blue_prop</defName>
+		<label>V-Wing (Blue) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/VWing/VWing_Blue</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!--==========================================================================
+	BTL-B Y-Wing
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-BTLBYWing_Incoming</defName>
+		<label>BTL-B Y-Wing Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/YWing/YWing</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-BTLBYWing_BomberRun</defName>
+		<label>BTL-B Y-Wing Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/YWing/YWing</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-BTLBYWing_Leaving</defName>
+		<label>BTL-B Y-Wing Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/YWing/YWing</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-BTLBYWing_Active</defName>
+		<label>BTL-B Y-Wing Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/YWing/YWing</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-BTLBYWing</defName>
+		<label>BTL-B Y-Wing</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/YWing/YWing</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>Designed by Koensayr Manufacturing, the BTL-B Y-wing was intended to serve as a combination starfighter and long-range bomber. The two large Koensayr ion jet engines, along with their characteristic nacelles, were carried by a cross wing, which connected to the cockpit module by a central spar. BTL-Bs were equipped with hyperdrives, unlike many other starfighters. This, along with the fuel recycling system present in all BTLs, made Y-wings durable long-range craft, though their tendency to run hot necessitated a complex cooling system extending throughout the ship.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 2
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 25
+Fuel cap: 1500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 300w
+Bombs: 10</description>
+		<size>4,9</size>
+		<designatorDropdown>MM-SS-BTLBYWing_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<WorkToBuild>9470</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>1894</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>963</Steel>
+<Plasteel>1250</Plasteel>
+<ComponentIndustrial>40</ComponentIndustrial>
+<ComponentSpacer>2</ComponentSpacer>
+<Cloth>220</Cloth>
+<Gold>10</Gold>
+<Silver>2250</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>10</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>10</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>25</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>2</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>1500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>1500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-300</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>32</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+<!--==========================================================================
+	Soulless One
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-SoullessOne_Incoming</defName>
+		<label>Soulless One Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Belbullab/Belbullab_SoulessOne</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-SoullessOne_BomberRun</defName>
+		<label>Soulless One Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Belbullab/Belbullab_SoulessOne</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-SoullessOne_Leaving</defName>
+		<label>Soulless One Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Belbullab/Belbullab_SoulessOne</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-SoullessOne_Active</defName>
+		<label>Soulless One Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Belbullab/Belbullab_SoulessOne</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-SoullessOne</defName>
+		<label>Soulless One</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/Belbullab/Belbullab_SoulessOne</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(9,9)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Soulless One was a customized Belbullab-22 heavy starfighter built by Feethan Ottraw Scalable Assemblies, which had been designed as an upgrade to the Confederacy of Independent Systems' droid starfighters such as the vulture droids and droid tri-fighters.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 40
+Fuel cap: 500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 4</description>
+		<size>5,8</size>
+		<designatorDropdown>MM-SS-SoullessOne_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1750</MaxHitPoints>
+			<WorkToBuild>5702</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>1140</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>1063</Steel>
+<Plasteel>875</Plasteel>
+<ComponentIndustrial>29</ComponentIndustrial>
+<ComponentSpacer>4</ComponentSpacer>
+<Cloth>110</Cloth>
+<Gold>20</Gold>
+<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>4</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>4</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>40</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>35</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+<!--==========================================================================
+	Droid Gunship
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-DroidGunship_Incoming</defName>
+		<label>Droid Gunship Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/HMP/hmp</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-DroidGunship_BomberRun</defName>
+		<label>Droid Gunship Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/HMP/hmp</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-DroidGunship_Leaving</defName>
+		<label>Droid Gunship Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/HMP/hmp</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-DroidGunship_Active</defName>
+		<label>Droid Gunship Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/HMP/hmp</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-DroidGunship</defName>
+		<label>Droid Gunship</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/HMP/hmp</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The HMP droid gunship, otherwise known as the HMP Predator gunship, was one of the deadlier autonomous vehicles designed by the Geonosians and produced by Baktoid Fleet Ordnance and Haor Chall Engineering Corporation to be fielded by the Droid Army of the Confederacy of Independent Systems in response to the Galactic Republic naval forces' Low Altitude Assault Transport line of heavy combat airspeeders.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 0
+Max Crew: 12
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 25
+Fuel cap: 5000L
+Fuel Usage: 10 per Tile
+Cargo cap: 1500kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 500w
+Bombs: 6</description>
+		<size>9,10</size>
+		<designatorDropdown>MM-SS-DroidGunship_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>25026</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5005</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>2625</Steel>
+<Plasteel>1000</Plasteel>
+<ComponentIndustrial>56</ComponentIndustrial>
+<ComponentSpacer>2</ComponentSpacer>
+<Cloth>1320</Cloth>
+<Gold>10</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>6</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>6</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>1500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>25</travelSpeed>
+				<fuelPerTile>10</fuelPerTile>
+				<minPassengers>0</minPassengers>
+				<maxPassengers>12</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-500</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>88</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+"<!--==========================================================================
+	Hyena Bomber
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-HyenaBomber" ParentName="MM_ShipBase" Abstract="True">
+		<label>Hyena Bomber</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(8,8)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Hyena-class Droid Bomber was a model of droid starfighter that was the technical successor to the smaller, less sturdy, and more lightly armored Variable Geometry Self-Propelled Battle Droid, Mark I, also known as vulture droids. Like its predecessor, it was designed to be cheaper and easier to construct than equivalent starships driven by organic pilots, also making it more disposable. The space that would usually be taken up by a pilot was instead used to carry a hefty armament of ordnance, including light laser cannons, proton torpedos, concussion missiles, and proton bombs.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 0
+Max Crew: 0
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 25
+Fuel cap: 1500L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 300w
+Bombs: 8</description>
+		<size>5,6</size>
+		<designatorDropdown>MM-SS-HyenaBomber_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<WorkToBuild>8726</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>1745</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>813</Steel>
+<Plasteel>1250</Plasteel>
+<ComponentIndustrial>38</ComponentIndustrial>
+<ComponentSpacer>2</ComponentSpacer>
+<Gold>10</Gold>
+<Silver>2250</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>8</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>8</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>25</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>0</minPassengers>
+				<maxPassengers>0</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>1500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>1500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-300</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>27</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-HyenaBomber_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Hyena Bomber Prop</label>
+		<description>Hyena Bomber Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(8,8)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,6</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-HyenaBomber_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- Hyena Bomber (CIS) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-HyenaBomber-CIS_Incoming</defName>
+		<label>Hyena Bomber Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-HyenaBomber-CIS_BomberRun</defName>
+		<label>Hyena Bomber Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_CIS</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-HyenaBomber-CIS_Leaving</defName>
+		<label>Hyena Bomber Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-HyenaBomber-CIS_Active</defName>
+		<label>Hyena Bomber Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-HyenaBomber">
+		<defName>MM-SS-HyenaBomber-CIS</defName>
+		<label>Hyena Bomber (CIS)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-HyenaBomber_prop">
+		<defName>MM-SS-HyenaBomber-CIS_prop</defName>
+		<label>Hyena Bomber (CIS) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Hyena Bomber (TF) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-HyenaBomber-TF_Incoming</defName>
+		<label>Hyena Bomber Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_TF</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-HyenaBomber-TF_BomberRun</defName>
+		<label>Hyena Bomber Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_TF</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-HyenaBomber-TF_Leaving</defName>
+		<label>Hyena Bomber Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_TF</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-HyenaBomber-TF_Active</defName>
+		<label>Hyena Bomber Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_TF</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-HyenaBomber">
+		<defName>MM-SS-HyenaBomber-TF</defName>
+		<label>Hyena Bomber (TF)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_TF</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-HyenaBomber_prop">
+		<defName>MM-SS-HyenaBomber-TF_prop</defName>
+		<label>Hyena Bomber (TF) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Hyena/Hyena_TF</texPath>
+		</graphicData>
+	</ThingDef>
+
+"<!--==========================================================================
+	Vulture Droid Starfighter
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-VultureDroidStarfighter" ParentName="MM_ShipBase" Abstract="True">
+		<label>Vulture Droid Starfighter</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>With the effectiveness of droid starfighters debated in strategic circles for generations, vulture droids were as such capable of extreme maneuvers that could crush even the sturdiest organic pilot, but lacked the resourcefulness and cunning that living pilots brought into combat. Nonetheless, a lack of life-support systems allowed more room for armaments and fuel, and the lack of an organic pilot removed, for some, any moral responsibility for its destruction.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 0
+Max Crew: 0
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 45
+Fuel cap: 500L
+Fuel Usage: 4 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 2</description>
+		<size>3,5</size>
+		<designatorDropdown>MM-SS-VultureDroidStarfighter_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>3458</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>692</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>438</Steel>
+<Plasteel>500</Plasteel>
+<ComponentIndustrial>27</ComponentIndustrial>
+<ComponentSpacer>4</ComponentSpacer>
+<Gold>10</Gold>
+<Silver>750</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>2</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>2</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>45</travelSpeed>
+				<fuelPerTile>4</fuelPerTile>
+				<minPassengers>0</minPassengers>
+				<maxPassengers>0</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>15</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-VultureDroidStarfighter_prop" ParentName="BuildingBase" Abstract="True">
+		<label>Vulture Droid Starfighter Prop</label>
+		<description>Vulture Droid Starfighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-VultureDroidStarfighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>"
+
+<!-- Vulture Droid Starfighter (CIS) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-VultureDroidStarfighter-CIS_Incoming</defName>
+		<label>Vulture Droid Starfighter Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-VultureDroidStarfighter-CIS_BomberRun</defName>
+		<label>Vulture Droid Starfighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_CIS</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-VultureDroidStarfighter-CIS_Leaving</defName>
+		<label>Vulture Droid Starfighter Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-VultureDroidStarfighter-CIS_Active</defName>
+		<label>Vulture Droid Starfighter Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VultureDroidStarfighter">
+		<defName>MM-SS-VultureDroidStarfighter-CIS</defName>
+		<label>Vulture Droid Starfighter (CIS)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VultureDroidStarfighter_prop">
+		<defName>MM-SS-VultureDroidStarfighter-CIS_prop</defName>
+		<label>Vulture Droid Starfighter (CIS) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_CIS</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- Vulture Droid Starfighter (TF) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-VultureDroidStarfighter-TF_Incoming</defName>
+		<label>Vulture Droid Starfighter Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_TF</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-VultureDroidStarfighter-TF_BomberRun</defName>
+		<label>Vulture Droid Starfighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_TF</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-VultureDroidStarfighter-TF_Leaving</defName>
+		<label>Vulture Droid Starfighter Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_TF</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-VultureDroidStarfighter-TF_Active</defName>
+		<label>Vulture Droid Starfighter Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_TF</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VultureDroidStarfighter">
+		<defName>MM-SS-VultureDroidStarfighter-TF</defName>
+		<label>Vulture Droid Starfighter (TF)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_TF</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-VultureDroidStarfighter_prop">
+		<defName>MM-SS-VultureDroidStarfighter-TF_prop</defName>
+		<label>Vulture Droid Starfighter (TF) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Vulture/Vulture_TF</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!--==========================================================================
+	Scimitar
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-Scimitar_Incoming</defName>
+		<label>Scimitar Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Scimitar/Scimitar</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-Scimitar_BomberRun</defName>
+		<label>Scimitar Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Scimitar/Scimitar</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-Scimitar_Leaving</defName>
+		<label>Scimitar Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Scimitar/Scimitar</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-Scimitar_Active</defName>
+		<label>Scimitar Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Scimitar/Scimitar</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-Scimitar</defName>
+		<label>Scimitar</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/Scimitar/Scimitar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(15,15)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Scimitar, also known as the Sith Infiltrator featured folding wings around its spherical cockpit, and was secretly modified from a Star Courier manufactured by Republic Sienar Systems. The craft featured six laser cannons, a proton torpedo launcher and a minelayer. Along with its deadly armament, the Scimitar was equipped with a cloaking device, powered by rare stygium crystals from the planet Aeten II, that allowed it to disappear from view and any pursuing ship's sensors.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 6
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 45
+Fuel cap: 5000L
+Fuel Usage: 3 per Tile
+Cargo cap: 500kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 1000w</description>
+		<size>7,11</size>
+		<designatorDropdown>MM-SS-Scimitar_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>21708</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4342</Mass>
+			<Beauty>20</Beauty>
+		</statBases>
+		<costList>
+			<Steel>2050</Steel>
+<Plasteel>500</Plasteel>
+<ComponentIndustrial>100</ComponentIndustrial>
+<ComponentSpacer>4</ComponentSpacer>
+<Cloth>660</Cloth>
+<Gold>40</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>45</travelSpeed>
+				<fuelPerTile>3</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>6</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>68</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+<!--==========================================================================
+	Sheathipede Shuttle
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-SheathipedeShuttle_Incoming</defName>
+		<label>Sheathipede Shuttle Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Sheathipede/Sheathipede</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-SheathipedeShuttle_BomberRun</defName>
+		<label>Sheathipede Shuttle Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/Sheathipede/Sheathipede</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-SheathipedeShuttle_Leaving</defName>
+		<label>Sheathipede Shuttle Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Sheathipede/Sheathipede</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-SheathipedeShuttle_Active</defName>
+		<label>Sheathipede Shuttle Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/Sheathipede/Sheathipede</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-SheathipedeShuttle</defName>
+		<label>Sheathipede Shuttle</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/Sheathipede/Sheathipede</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>A product of Haor Chall Engineering Corporation, the Sheathipede-class was a transport shuttle with a curved hull and pincer-like landing gears, which lowered from the ship's rounded belly, and the shuttle's shape roughly resembled the Neimoidian soldier beetle.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 2
+Max Crew: 15
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 30
+Fuel cap: 5000L
+Fuel Usage: 5 per Tile
+Cargo cap: 1500kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w</description>
+		<size>5,7</size>
+		<designatorDropdown>MM-SS-SheathipedeShuttle_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>21396</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>4279</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>1250</Steel>
+<Plasteel>250</Plasteel>
+<ComponentIndustrial>25</ComponentIndustrial>
+<ComponentSpacer>3</ComponentSpacer>
+<Cloth>1650</Cloth>
+<Gold>20</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>1500</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>30</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>2</minPassengers>
+				<maxPassengers>15</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>42</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+
+<!--==========================================================================
+	Droid Landing Craft
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-DroidLandingCraft_Incoming</defName>
+		<label>Droid Landing Craft Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/C9979/C9979</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-DroidLandingCraft_BomberRun</defName>
+		<label>Droid Landing Craft Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/C9979/C9979</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-DroidLandingCraft_Leaving</defName>
+		<label>Droid Landing Craft Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/C9979/C9979</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-DroidLandingCraft_Active</defName>
+		<label>Droid Landing Craft Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/C9979/C9979</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-DroidLandingCraft</defName>
+		<label>Droid Landing Craft</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/C9979/C9979</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(28,28)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The C-9979 landing craft, also known as the Trade Federation landing ship, was a heavy transport starship used by the Trade Federation,] and later the Confederacy of Independent Systems.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 0
+Max Crew: 50
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 10
+Fuel cap: 5000L
+Fuel Usage: 15 per Tile
+Cargo cap: 5000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 200w</description>
+		<size>26,12</size>
+		<designatorDropdown>MM-SS-DroidLandingCraft_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<WorkToBuild>46662</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>9332</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Steel>9050</Steel>
+<Plasteel>1250</Plasteel>
+<ComponentIndustrial>20</ComponentIndustrial>
+<ComponentSpacer>1</ComponentSpacer>
+<Cloth>5500</Cloth>
+<Gold>10</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>5000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>10</travelSpeed>
+				<fuelPerTile>15</fuelPerTile>
+				<minPassengers>0</minPassengers>
+				<maxPassengers>50</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-200</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>302</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+
+	
+<!--==========================================================================
+	GX1 Short Hauler
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+	<ThingDef Name="MM-SS-GX1ShortHauler" ParentName="MM_ShipBase" Abstract="True">
+		<label>GX1 Short Hauler</label>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(24,24)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+		</graphicData>
+		<description>The GX1 short hauler was a shuttle model manufactured by Lantillian ShipWrights. During the Clone Wars, the Galactic Republic used several top-of-the-line GX1 short haulers, including the Phoenix and the Valorous, as diplomatic vessels. During the Age of the Empire, GX1 shuttles were used as starbuses to ferry commuters from one location to another. Although the diplomatic variant was equipped with turret-mounted double laser cannons, the civilian starbus variant had no weapons.
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 11
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 30
+Fuel cap: 5000L
+Fuel Usage: 7 per Tile
+Cargo cap: 2000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 2500w</description>
+		<size>12,24</size>
+		<designatorDropdown>MM-SS-GX1ShortHauler_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>34886</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>6977</Mass>
+			<Beauty>15</Beauty>
+		</statBases>
+		<costList>
+			<Steel>7700</Steel>
+<Plasteel>750</Plasteel>
+<ComponentIndustrial>250</ComponentIndustrial>
+<ComponentSpacer>3</ComponentSpacer>
+<Cloth>1210</Cloth>
+<Gold>30</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>2000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>30</travelSpeed>
+				<fuelPerTile>7</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>11</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-2500</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>257</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+	<ThingDef Name="MM-SS-GX1ShortHauler_prop" ParentName="BuildingBase" Abstract="True">
+		<label>GX1 Short Hauler Prop</label>
+		<description>GX1 Short Hauler Prop</description>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(24,24)</drawSize>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>12,24</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-GX1ShortHauler_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+<!-- GX1 Short Hauler (plain) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-GX1ShortHauler-plain_Incoming</defName>
+		<label>GX1 Short Hauler Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_plain</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-GX1ShortHauler-plain_BomberRun</defName>
+		<label>GX1 Short Hauler Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_plain</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-GX1ShortHauler-plain_Leaving</defName>
+		<label>GX1 Short Hauler Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_plain</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-GX1ShortHauler-plain_Active</defName>
+		<label>GX1 Short Hauler Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_plain</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-GX1ShortHauler">
+		<defName>MM-SS-GX1ShortHauler-plain</defName>
+		<label>GX1 Short Hauler (plain)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_plain</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-GX1ShortHauler_prop">
+		<defName>MM-SS-GX1ShortHauler-plain_prop</defName>
+		<label>GX1 Short Hauler (plain) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_plain</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!-- GX1 Short Hauler (phoenix) -->	
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-GX1ShortHauler-phoenix_Incoming</defName>
+		<label>GX1 Short Hauler Arriving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_phoenix</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-GX1ShortHauler-phoenix_BomberRun</defName>
+		<label>GX1 Short Hauler Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_phoenix</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-GX1ShortHauler-phoenix_Leaving</defName>
+		<label>GX1 Short Hauler Leaving</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_phoenix</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-GX1ShortHauler-phoenix_Active</defName>
+		<label>GX1 Short Hauler Active</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_phoenix</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-GX1ShortHauler">
+		<defName>MM-SS-GX1ShortHauler-phoenix</defName>
+		<label>GX1 Short Hauler (phoenix)</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_phoenix</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MM-SS-GX1ShortHauler_prop">
+		<defName>MM-SS-GX1ShortHauler-phoenix_prop</defName>
+		<label>GX1 Short Hauler (phoenix) Prop</label>
+		<graphicData>
+			<texPath>3_Clone Wars/GX1/gx1_phoenix</texPath>
+		</graphicData>
+	</ThingDef>
+
+<!--==========================================================================
+	Fang Fighter
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-FangFighter_Incoming</defName>
+		<label>Fang Fighter Arriving</label>
+		<graphicData>
+			<texPath>5_Donated/Fang/Fang</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-FangFighter_BomberRun</defName>
+		<label>Fang Fighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>5_Donated/Fang/Fang</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-FangFighter_Leaving</defName>
+		<label>Fang Fighter Leaving</label>
+		<graphicData>
+			<texPath>5_Donated/Fang/Fang</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-FangFighter_Active</defName>
+		<label>Fang Fighter Active</label>
+		<graphicData>
+			<texPath>5_Donated/Fang/Fang</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-FangFighter</defName>
+		<label>Fang Fighter</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>5_Donated/Fang/Fang</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>Fang fighters were fast and highly maneuverable starship designed specifically for combat. The craft's narrow attack profile and swivel-mounted wings that provided vectored-thrust control gave the fighter unmatched agility.
+
+Texture Donated By MyDylanScoot
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 1
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 35
+Fuel cap: 750L
+Fuel Usage: 5 per Tile
+Cargo cap: 250kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 250w
+Bombs: 4</description>
+		<size>5,5</size>
+		<designatorDropdown>MM-SS-FangFighter_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>780</MaxHitPoints>
+			<WorkToBuild>4730</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>946</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>688</Steel>
+<Plasteel>390</Plasteel>
+<ComponentIndustrial>29</ComponentIndustrial>
+<ComponentSpacer>3</ComponentSpacer>
+<Cloth>110</Cloth>
+<Gold>20</Gold>
+<Silver>1125</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>4</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>4</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>250</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>35</travelSpeed>
+				<fuelPerTile>5</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>1</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>750</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>23</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+	
+
+<!--==========================================================================
+	Komrk Fighter
+	==========================================================================-->
+<!-- Designator Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+<!-- Flight Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_Ship_Arrival_Base" >
+		<defName>MM-SS-KomrkFighter_Incoming</defName>
+		<label>Komrk Fighter Arriving</label>
+		<graphicData>
+			<texPath>5_Donated/Gauntlet/Gauntlet</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_BomberSkyfaller_Base">
+		<defName>MM-SS-KomrkFighter_BomberRun</defName>
+		<label>Komrk Fighter Bombing</label>
+		<thingClass>SRTS.SRTSBombing</thingClass>
+		<graphicData>
+			<texPath>5_Donated/Gauntlet/Gauntlet</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutFlying</shaderType>
+			<drawSize>(9,9)</drawSize>
+		</graphicData>
+		<skyfaller>
+		<speed>0.85</speed>
+		<movementType>ConstantSpeed</movementType>
+		<shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+		<shadowSize>(6,6)</shadowSize>
+		<anticipationSound>DropPod_Fall</anticipationSound>
+		<anticipationSoundTicks>100</anticipationSoundTicks>
+		<motesPerCell>0</motesPerCell>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Leaving_Base">
+		<defName>MM-SS-KomrkFighter_Leaving</defName>
+		<label>Komrk Fighter Leaving</label>
+		<graphicData>
+			<texPath>5_Donated/Gauntlet/Gauntlet</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MM_Ship_Active_Base">
+		<defName>MM-SS-KomrkFighter_Active</defName>
+		<label>Komrk Fighter Active</label>
+		<graphicData>
+			<texPath>5_Donated/Gauntlet/Gauntlet</texPath>
+		</graphicData>
+	</ThingDef>
+
+ 
+<!-- Object Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="MM_ShipBase">
+		<defName>MM-SS-KomrkFighter</defName>
+		<label>Komrk Fighter</label>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>5_Donated/Gauntlet/Gauntlet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<description>The Kom'rk-class fighter/transport, also known as Kom'rk Class fighter transport or the Gauntlet starfighter, was a type of starfighter and troop transport used by the Mandalorian splinter faction known as Death Watch during the Clone Wars.
+
+Texture Donated By MyDylanScoot
+
+&#60;&#60;&#60; Crew &#62;&#62;&#62;
+Required Flight Crew: 1
+Max Crew: 14
+
+&#60;&#60;&#60; Flight &#62;&#62;&#62;
+Speed: 25
+Fuel cap: 5000L
+Fuel Usage: 6 per Tile
+Cargo cap: 5000kg
+
+&#60;&#60;&#60; Sub-Systems &#62;&#62;&#62;
+Internal power plant: 500w
+Bombs: 8</description>
+		<size>10,10</size>
+		<designatorDropdown>MM-SS-KomrkFighter_Designator</designatorDropdown>
+		<statBases>
+			<MaxHitPoints>1750</MaxHitPoints>
+			<WorkToBuild>27490</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5498</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costList>
+			<Steel>3750</Steel>
+<Plasteel>875</Plasteel>
+<ComponentIndustrial>58</ComponentIndustrial>
+<ComponentSpacer>2</ComponentSpacer>
+<Cloth>1540</Cloth>
+<Gold>20</Gold>
+<Silver>7500</Silver>
+		</costList>
+		<comps>
+			<li Class="SRTS.CompProperties_BombsAway"> <!-- include this comp if you want it to be able to carpet bomb, remove this comp if you dont -->
+				<numberBombs>8</numberBombs> <!-- num dropped per run -->
+				<precisionBombingNumBombs>8</precisionBombingNumBombs> <!-- number of bombs dropped in precise drop -->
+				<radiusOfDrop>5</radiusOfDrop> <!-- how many cells out from the center the bombs may drop -->
+				<speed>1</speed> <!-- How quickly the ship flies over. Default 1 -->
+				<distanceBetweenDrops>4</distanceBetweenDrops> <!-- Distance in cells from when each bomb is dropped -->
+			</li>
+			<li Class="CompProperties_Transporter">
+				<restEffectiveness>1.5</restEffectiveness>
+				<massCapacity>5000</massCapacity>
+			</li>
+			<li Class="SRTS.CompProperties_LaunchableSRTS">
+				<travelSpeed>25</travelSpeed>
+				<fuelPerTile>6</fuelPerTile>
+				<minPassengers>1</minPassengers>
+				<maxPassengers>14</maxPassengers>
+				<spaceFaring>true</spaceFaring>
+				<shuttleBayLanding>false</shuttleBayLanding>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>5000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5000</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>0.5</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerPlant</compClass>
+				<basePowerConsumption>-500</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(217,217,217,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiIconScale>0.75</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>125</ChunkSlagSteel>
+		</killedLeavings>
+		<defaultPlacingRot>South</defaultPlacingRot>
+	</ThingDef>
+</Defs>

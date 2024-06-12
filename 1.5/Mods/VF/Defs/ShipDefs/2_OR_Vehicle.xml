@@ -1,0 +1,2349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<Vehicles.VehicleDef Abstract="True" Name="MM-VF-Vehicle_Pawn" ParentName="BaseVehiclePawn">
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-EbonHawk_Blueprint</buildDef>
+		<size>(6, 7)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>true</canCaravan>
+		<techLevel>Ultra</techLevel>
+		<vehicleType>Air</vehicleType>
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>				<!-- Must Include -->
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>48.5</fuelConsumptionRate>
+				<fuelCapacity>3000</fuelCapacity>
+				<fuelConsumptionWorldMultiplier>0.5</fuelConsumptionWorldMultiplier>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleLauncher">
+				<launchProtocol Class="Vehicles.PropellerTakeoff">
+					<launchProperties Class = "Vehicles.PropellerProtocolProperties">
+						<maxTicks>1000</maxTicks>
+						<maxTicksVertical>800</maxTicksVertical>
+						<maxTicksPropeller>1500</maxTicksPropeller>
+						<lockShadowZ>true</lockShadowZ>
+						<rotationCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.34, 0.07)</li>
+								<li>(0.31, 3.91)</li>
+								<li>(0.5, 6.22)</li>
+								<li>(0.72, 5.36)</li>
+								<li>(0.88, 6.54)</li>
+								<li>(1, 6.5)</li>
+							</points>
+						</rotationCurve>
+
+						<rotationVerticalCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.2, 2)</li>
+								<li>(0.4, 6)</li>
+								<li>(0.6, -8)</li>
+								<li>(0.8, 3.3)</li>
+								<li>(1, 4)</li>
+							</points>
+						</rotationVerticalCurve>
+
+						<angularVelocityPropeller Class="SmashTools.BezierCurve">
+							<points>
+								<li>0, 0</li>
+								<li>0.5, 0</li>
+								<li>1, 59</li>
+							</points>
+						</angularVelocityPropeller>
+
+						<xPositionCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.2, 1.33)</li>
+								<li>(0.4, 1)</li>
+								<li>(0.62, 28.18)</li>
+								<li>(0.85, 42.12)</li>
+								<li>(1, 140)</li>
+							</points>
+						</xPositionCurve>
+
+						<xPositionVerticalCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>0, 0</li>
+								<li>0.2, 0</li>
+								<li>0.4, 0</li>
+								<li>0.6, 0</li>
+								<li>0.8, 0</li>
+								<li>1, 1</li>
+							</points>
+						</xPositionVerticalCurve>
+
+						<zPositionCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0, 1.3)</li>
+								<li>(0.15, 1.14)</li>
+								<li>(0.31, 2.17)</li>
+								<li>(0.54, 1.47)</li>
+								<li>(0.7, 5.08)</li>
+								<li>(0.93, 5.12)</li>
+								<li>(1, 7.5)</li>
+							</points>
+						</zPositionCurve>
+
+						<zPositionVerticalCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.15, 0)</li>
+								<li>(0.85, 12.3)</li>
+								<li>(1, 15)</li>
+							</points>
+						</zPositionVerticalCurve>
+
+						<shadowAlphaPropellerCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.15, 0)</li>
+								<li>(0.2, 0)</li>
+								<li>(0.3, 1)</li>
+							</points>
+						</shadowAlphaPropellerCurve>
+
+						<fleckDataVertical>
+							<def>DustPuff</def>
+							<angle>0~360</angle>
+							<runOutOfStep>false</runOutOfStep>
+							<lockFleckX>false</lockFleckX>
+
+							<airTime>
+								<points>
+									<li>(1, 1)</li>
+								</points>
+							</airTime>
+
+							<drawOffset Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 4)</li>
+									<li>(0.25, 4)</li>
+									<li>(0.5, 4)</li>
+									<li>(0.75, 6)</li>
+									<li>(0.75, 8)</li>
+								</points>
+							</drawOffset>
+
+							<xFleckPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 1.5)</li>
+								</points>
+							</xFleckPositionCurve>
+
+							<frequency Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 160)</li>
+									<li>(0.25, 160)</li>
+									<li>(0.5, 160)</li>
+									<li>(0.75, 130)</li>
+									<li>(0.75, 0)</li>
+								</points>
+							</frequency>
+
+							<rotationRate>
+								<points>
+									<li>(0, 3)</li>
+									<li>(1, 1)</li>
+								</points>
+							</rotationRate>
+
+							<size Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 2.5)</li>
+									<li>(0.25, 1.64)</li>
+									<li>(0.75, 1.56)</li>
+									<li>(1, 1)</li>
+								</points>
+							</size>
+
+							<speed>
+								<points>
+									<li>(0, 6)</li>
+									<li>(1, 3)</li>
+								</points>
+							</speed>
+						</fleckDataVertical>
+
+						<fleckDataPropeller>
+							<def>DustPuff</def>
+							<angle>0~360</angle>
+							<runOutOfStep>false</runOutOfStep>
+							<lockFleckX>false</lockFleckX>
+
+							<airTime>
+								<points>
+									<li>(0, 0.5)</li>
+									<li>(0.5, 1)</li>
+								</points>
+							</airTime>
+
+							<drawOffset Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 3)</li>
+									<li>(0.25, 3)</li>
+									<li>(0.5, 3)</li>
+									<li>(0.75, 4)</li>
+									<li>(1, 4)</li>
+								</points>
+							</drawOffset>
+
+							<xFleckPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 1.5)</li>
+								</points>
+							</xFleckPositionCurve>
+
+							<frequency Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.2, 0)</li>
+									<li>(0.25, 20)</li>
+									<li>(0.75, 40)</li>
+									<li>(1, 160)</li>
+								</points>
+							</frequency>
+
+							<rotationRate>
+								<points>
+									<li>(0, 1)</li>
+									<li>(1, 3)</li>
+								</points>
+							</rotationRate>
+
+							<size Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 1)</li>
+									<li>(0.25, 1.56)</li>
+									<li>(0.75, 1.64)</li>
+									<li>(1, 2.5)</li>
+								</points>
+							</size>
+
+							<speed>
+								<points>
+									<li>(0, 3)</li>
+									<li>(1, 6)</li>
+								</points>
+							</speed>
+						</fleckDataPropeller>
+					</launchProperties>
+
+					<landingProperties Class = "Vehicles.PropellerProtocolProperties">
+						<maxTicks>800</maxTicks>
+						<maxTicksVertical>1400</maxTicksVertical>
+						<maxTicksPropeller>900</maxTicksPropeller>
+						<lockShadowZ>true</lockShadowZ>
+
+						<angularVelocityPropeller Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 59)</li>
+								<li>(0.5, 0)</li>
+								<li>(1, 0)</li>
+							</points>
+						</angularVelocityPropeller>
+
+						<rotationCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 10)</li>
+								<li>(0.2, 10)</li>
+								<li>(0.4, 10)</li>
+								<li>(0.68, 10)</li>
+								<li>(0.78, 6.74)</li>
+								<li>(0.69, 1.19)</li>
+								<li>(0.79, -2)</li>
+								<li>(1, -2)</li>
+							</points>
+						</rotationCurve>
+
+						<rotationVerticalCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.22, 4.57)</li>
+								<li>(0.44, 5.18)</li>
+								<li>(0.69, 3.37)</li>
+								<li>(0.79, 5.55)</li>
+								<li>(1, 2)</li>
+							</points>
+						</rotationVerticalCurve>
+
+						<xPositionCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, -150)</li>
+								<li>(0.32, -120.12)</li>
+								<li>(0.49, -91.06)</li>
+								<li>(0.64, -66)</li>
+								<li>(0.73, -41.07)</li>
+								<li>(0.87, -29.64)</li>
+								<li>(1, -20)</li>
+							</points>
+						</xPositionCurve>
+
+						<xPositionVerticalCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, -20)</li>
+								<li>(0.17, 6.65)</li>
+								<li>(0.3, 15)</li>
+								<li>(0.5, 20)</li>
+								<li>(0.75, 20)</li>
+								<li>(1, 20)</li>
+							</points>
+						</xPositionVerticalCurve>
+
+						<zPositionCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 5)</li>
+								<li>(0.25, 0.94)</li>
+								<li>(0.47, 0.46)</li>
+								<li>(0.74, 1.76)</li>
+								<li>(0.8, 0.58)</li>
+								<li>(1, 2.11)</li>
+							</points>
+						</zPositionCurve>
+
+						<zPositionVerticalCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 15)</li>
+								<li>(0.15, 18.09)</li>
+								<li>(0.5, 14)</li>
+								<li>(0.75, 0)</li>
+								<li>(1, -2.11)</li>
+							</points>
+						</zPositionVerticalCurve>
+
+						<shadowAlphaPropellerCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0.7, 1)</li>
+								<li>(0.85, 1)</li>
+								<li>(0.9, 1)</li>
+								<li>(1, 0)</li>
+							</points>
+						</shadowAlphaPropellerCurve>
+
+						<fleckDataVertical>
+							<def>DustPuff</def>
+							<angle>0~360</angle>
+							<runOutOfStep>false</runOutOfStep>
+							<lockFleckX>false</lockFleckX>
+
+							<airTime>
+								<points>
+									<li>(1, 1)</li>
+								</points>
+							</airTime>
+
+							<drawOffset Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 8)</li>
+									<li>(0.25, 6)</li>
+									<li>(0.5, 4)</li>
+									<li>(0.75, 4)</li>
+									<li>(0.75, 4)</li>
+								</points>
+							</drawOffset>
+
+							<xFleckPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 1.5)</li>
+								</points>
+							</xFleckPositionCurve>
+
+							<frequency Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.65, 0)</li>
+									<li>(0.65, 130)</li>
+									<li>(0.75, 160)</li>
+									<li>(0.75, 160)</li>
+									<li>(1, 160)</li>
+								</points>
+							</frequency>
+
+							<rotationRate>
+								<points>
+									<li>(0, 3)</li>
+									<li>(1, 1)</li>
+								</points>
+							</rotationRate>
+
+							<size Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 1)</li>
+									<li>(0.25, 1.56)</li>
+									<li>(0.75, 1.64)</li>
+									<li>(1, 2.5)</li>
+								</points>
+							</size>
+
+							<speed>
+								<points>
+									<li>(0, 3)</li>
+									<li>(1, 6)</li>
+								</points>
+							</speed>
+						</fleckDataVertical>
+
+						<fleckDataPropeller>
+							<def>DustPuff</def>
+							<angle>0~360</angle>
+							<runOutOfStep>false</runOutOfStep>
+							<lockFleckX>false</lockFleckX>
+
+							<airTime>
+								<points>
+									<li>(0, 1)</li>
+									<li>(0.5, 0.5)</li>
+								</points>
+							</airTime>
+
+							<drawOffset Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 4)</li>
+									<li>(0.25, 4)</li>
+									<li>(0.5, 4)</li>
+									<li>(0.75, 3)</li>
+									<li>(1, 3)</li>
+								</points>
+							</drawOffset>
+
+							<xFleckPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 1.5)</li>
+								</points>
+							</xFleckPositionCurve>
+
+							<frequency Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 160)</li>
+									<li>(0.05, 40)</li>
+									<li>(0.55, 20)</li>
+									<li>(0.8, 0)</li>
+								</points>
+							</frequency>
+
+							<rotationRate>
+								<points>
+									<li>(0, 3)</li>
+									<li>(1, 1)</li>
+								</points>
+							</rotationRate>
+
+							<size Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 2.5)</li>
+									<li>(0.25, 1.64)</li>
+									<li>(0.75, 1.56)</li>
+									<li>(1, 1)</li>
+								</points>
+							</size>
+
+							<speed>
+								<points>
+									<li>(0, 6)</li>
+									<li>(1, 3)</li>
+								</points>
+							</speed>
+						</fleckDataPropeller>
+					</landingProperties>
+				</launchProtocol>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+
+
+
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-EbonHawk</defName>
+		<label>Ebon Hawk VF</label>
+		<description>The Ebon Hawk, a legendary vessel, renowned for its versatility and resilience, epitomizes the epitome of starship engineering. Originally a freighter, it has been extensively modified for various roles, from smuggling to combat, earning its reputation as a vessel capable of navigating the most treacherous of spaceways. \n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x2, Passenger x6\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-EbonHawk_Blueprint</buildDef>
+		<size>(13, 14)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>true</canCaravan>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Ultra</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>9000</MarketValue>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>2200</Mass>
+			<MoveSpeed>40</MoveSpeed>
+			<CargoCapacity>5000</CargoCapacity>
+			<RepairRate>1</RepairRate>
+			<FlightSpeed>50</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>2</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(-1, 3)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>6</slots>
+					<hitbox>
+						<cells>
+							<li>(0, 3)</li>
+							<li>(1, 3)</li>
+							<li>(-1, 2)</li>
+							<li>(0, 2)</li>
+							<li>(1, 2)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>120</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Cargo Storage</key>
+				<label>Cargo Storage</label>
+				<health>60</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-Aurek</defName>
+		<label>Aurek</label>
+		<description>The Aurek, a staple starfighter of the Galactic Republic, is renowned for its speed, maneuverability, and combat prowess. Designed for reconnaissance and dogfighting, it boasts advanced weaponry and shielding, making it a formidable adversary in space battles. \n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1</description>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-Aurek_Blueprint</buildDef>
+		<size>(3, 4)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.9</ArmorRating_Heat>
+			<MarketValue>60000</MarketValue>
+			<Flammability>0.1</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>1500</Mass>
+			<MoveSpeed>45</MoveSpeed>
+			<FlightSpeed>80</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 1)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>100</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>100</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>200</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>80</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>120</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>CargoStorage</key>
+				<label>Cargo Storage</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-Basilisk</defName>
+		<label>Basilisk</label>
+		<description>The Basilisk, a formidable assault airspeeder utilized by the Mandalorian warriors, is known for its rugged design and heavy firepower. Equipped with advanced weaponry and reinforced armor plating, it serves as a versatile ground attack vehicle capable of engaging enemy forces with devastating effect.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1</description>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-Defender_Blueprint</buildDef>
+		<size>(3, 4)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.8</ArmorRating_Heat>
+			<MarketValue>70000</MarketValue>
+			<Flammability>0.1</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>1800</Mass>
+			<MoveSpeed>40</MoveSpeed>
+			<FlightSpeed>70</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 1)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftWing</key>
+				<label>Left Wing</label>
+				<health>100</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightWing</key>
+				<label>Right Wing</label>
+				<health>100</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>200</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>80</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>120</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>CargoStorage</key>
+				<label>Cargo Storage</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-Defender</defName>
+		<label>Defender</label>
+		<description>The Defender, a versatile starfighter utilized by the Galactic Republic, combines speed, maneuverability, and firepower. With its advanced shielding and weaponry, it's well-suited for a variety of combat missions, from dogfighting in space to ground support operations.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Astromech Droid x1</description>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-Defender_Blueprint</buildDef>
+		<size>(3, 4)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.8</ArmorRating_Heat>
+			<MarketValue>70000</MarketValue>
+			<Flammability>0.1</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>1800</Mass>
+			<MoveSpeed>40</MoveSpeed>
+			<FlightSpeed>70</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 1)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftWing</key>
+				<label>Left Wing</label>
+				<health>100</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightWing</key>
+				<label>Right Wing</label>
+				<health>100</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>200</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>80</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>120</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>CargoStorage</key>
+				<label>Cargo Storage</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-Fury</defName>
+		<label>Fury VF</label>
+		<description>The Fury, a high-speed starfighter utilized by the Galactic Republic, is designed for rapid deployment and reconnaissance missions. With its advanced technology and sleek design, it's capable of outmaneuvering most adversaries in both space and atmospheric combat.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-Fury_Blueprint</buildDef>
+		<size>(13, 14)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>9000</MarketValue>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>2200</Mass>
+			<MoveSpeed>40</MoveSpeed>
+			<FlightSpeed>50</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(-1, 3)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>120</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Cargo Storage</key>
+				<label>Cargo Storage</label>
+				<health>60</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-HammerHead</defName>
+		<label>HammerHead VF</label>
+		<description>The HammerHead, a versatile starship utilized by the Galactic Republic, is known for its durability and firepower. It serves various roles, from escort missions to heavy assault, making it a formidable presence in any engagement.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-HammerHead_Blueprint</buildDef>
+		<size>(13, 14)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>10000</MarketValue>
+			<Flammability>0.4</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>2500</Mass>
+			<MoveSpeed>35</MoveSpeed>
+			<FlightSpeed>45</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(-1, 3)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>130</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.3</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>90</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.3</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Cargo Storage</key>
+				<label>Cargo Storage</label>
+				<health>70</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-Mantis</defName>
+		<label>Mantis VF</label>
+		<description>The Mantis, a nimble starship utilized by the Galactic Republic, is renowned for its agility and precision. It excels in reconnaissance missions and hit-and-run tactics, capable of swiftly evading enemy fire while delivering precise strikes.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-Mantis_Blueprint</buildDef>
+		<size>(13, 14)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>10000</MarketValue>
+			<Flammability>0.4</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>2500</Mass>
+			<MoveSpeed>35</MoveSpeed>
+			<FlightSpeed>45</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(-1, 3)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>120</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Cargo Storage</key>
+				<label>Cargo Storage</label>
+				<health>60</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-Phantom</defName>
+		<label>Phantom VF</label>
+		<description>The Phantom, a stealthy starship utilized by the Galactic Republic, is adept at infiltration and covert operations. Equipped with advanced cloaking technology, it can slip past enemy defenses undetected, making it invaluable for espionage and surprise attacks.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-Phantom_Blueprint</buildDef>
+		<size>(13, 14)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>10000</MarketValue>
+			<Flammability>0.4</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>2500</Mass>
+			<MoveSpeed>35</MoveSpeed>
+			<FlightSpeed>45</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(-1, 3)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>120</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Cargo Storage</key>
+				<label>Cargo Storage</label>
+				<health>60</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(0,-1)</li>
+						<li>(1, -1)</li>
+						<li>(0, -2)</li>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+		<defName>MM-VF-SithInterceptor</defName>
+		<label>Sith Interceptor VF</label>
+		<description>The Sith Interceptor, a swift starship employed by the Sith Empire, is designed for quick strikes and agile combat maneuvers. With its advanced weaponry and high speed, it excels in intercepting and neutralizing enemy threats.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<color>(255, 255, 255)</color>
+			<colorTwo>(255, 255, 255)</colorTwo>
+			<colorThree>(255, 255, 255)</colorThree>
+		</graphicData>
+		<rotatable>True</rotatable>
+		<fillPercent>1</fillPercent>
+		<nameable>true</nameable>
+		<buildDef>MM-VF-SithInterceptor_Blueprint</buildDef>
+		<size>(13, 14)</size>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<canCaravan>false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Spacer</techLevel>
+		<vehicleType>Air</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>10000</MarketValue>
+			<Flammability>0.4</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>2500</Mass>
+			<MoveSpeed>35</MoveSpeed>
+			<FlightSpeed>45</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(-1, 3)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>70</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+						<li>(1, -3)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>MainEngine</key>
+				<label>Main Engine</label>
+				<health>120</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>60</health>
+				<depth>External</depth>
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+						</li>
+					</reactors>
+					<hitbox>
+						<cells>
+							<li>(-1, 1)</li>
+							<li>(0, 1)</li>
+							<li>(1, 1)</li>
+						</cells>
+					</hitbox>
+				</li>
+				<li>
+					<key>CargoStorage</key>
+					<label>Cargo Storage</label>
+					<health>60</health>
+					<depth>Internal</depth>
+					<hitbox>
+						<cells>
+							<li>(0,-1)</li>
+							<li>(1, -1)</li>
+							<li>(0, -2)</li>
+							<li>(1, -2)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</components>
+		</Vehicles.VehicleDef>
+
+		<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+			<defName>MM-VF-Supremacy</defName>
+			<label>Supremacy VF</label>
+			<description>The Supremacy, a massive starship of the Old Republic, is a symbol of power and dominance. With its formidable armaments and imposing presence, it strikes fear into the hearts of its enemies and asserts the authority of its faction across the galaxy.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+			<graphicData>
+				<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+				<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+				<drawSize>(24,24)</drawSize>
+				<shaderType>CutoutComplexPattern</shaderType>
+				<color>(255, 255, 255)</color>
+				<colorTwo>(255, 255, 255)</colorTwo>
+				<colorThree>(255, 255, 255)</colorThree>
+			</graphicData>
+			<rotatable>True</rotatable>
+			<fillPercent>1</fillPercent>
+			<nameable>true</nameable>
+			<buildDef>MM-VF-Supremacy_Blueprint</buildDef>
+			<size>(16, 18)</size>
+			<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+			<canCaravan>false</canCaravan>
+			<vehicleCategory>Combat</vehicleCategory>
+			<techLevel>Spacer</techLevel>
+			<vehicleType>Air</vehicleType>
+			<statBases>
+				<ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+				<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+				<ArmorRating_Heat>0.95</ArmorRating_Heat>
+				<MarketValue>20000</MarketValue>
+				<Flammability>0.2</Flammability>
+			</statBases>
+			<vehicleStats>
+				<Mass>5000</Mass>
+				<MoveSpeed>25</MoveSpeed>
+				<FlightSpeed>35</FlightSpeed>
+			</vehicleStats>
+			<properties>
+				<vehicleJobLimitations>
+					<li>(RepairVehicle, 5)</li>
+				</vehicleJobLimitations>
+				<roles>
+					<li>
+						<key>pilot</key>
+						<label>Pilot</label>
+						<slots>1</slots>
+						<slotsToOperate>1</slotsToOperate>
+						<handlingTypes>
+							<li>Movement</li>
+						</handlingTypes>
+						<hitbox>
+							<cells>
+								<li>(-1, 3)</li>
+								<li>(-1, -3)</li>
+							</cells>
+						</hitbox>
+					</li>
+				</roles>
+			</properties>
+			<components>
+				<li>
+					<key>LeftHorizontalStabilizer</key>
+					<label>Left Horizontal Stabilizer</label>
+					<health>100</health>
+					<depth>External</depth>
+					<hitbox>
+						<cells>
+							<li>(-1, 1)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>RightHorizontalStabilizer</key>
+					<label>Right Horizontal Stabilizer</label>
+					<health>100</health>
+					<depth>External</depth>
+					<hitbox>
+						<cells>
+							<li>(1, 1)</li>
+							<li>(1, -3)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>MainEngine</key>
+					<label>Main Engine</label>
+					<health>150</health>
+					<priorityStatEfficiency>true</priorityStatEfficiency>
+					<depth>Internal</depth>
+					<reactors>
+						<li Class="Vehicles.Reactor_Explosive">
+							<indicator>VF_Explosive</indicator>
+							<chance>0.30</chance>
+							<maxHealth>0.25</maxHealth>
+							<radius>4</radius>
+							<damageDef>Flame</damageDef>
+						</li>
+					</reactors>
+					<hitbox>
+						<cells>
+							<li>(-1, 0)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>FuelIntake</key>
+					<label>Fuel Intake</label>
+					<health>80</health>
+					<depth>External</depth>
+					<hitbox>
+						<cells>
+							<li>(-1, 0)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>Chemtank</key>
+					<label>Chemtank</label>
+					<health>120</health>
+					<depth>Internal</depth>
+					<reactors>
+						<li Class="Vehicles.Reactor_FuelLeak"/>
+						<li Class="Vehicles.Reactor_Explosive">
+							<indicator>VF_Explosive</indicator>
+							<chance>0.30</chance>
+							<maxHealth>0.25</maxHealth>
+							<radius>4</radius>
+							<damageDef>Flame</damageDef>
+						</li>
+					</reactors>
+					<hitbox>
+						<cells>
+							<li>(-1, 1)</li>
+							<li>(0, 1)</li>
+							<li>(1, 1)</li>
+						</cells>
+					</hitbox>
+				</li>
+				<li>
+					<key>CargoStorage</key>
+					<label>Cargo Storage</label>
+					<health>80</health>
+					<depth>Internal</depth>
+					<hitbox>
+						<cells>
+							<li>(0,-1)</li>
+							<li>(1, -1)</li>
+							<li>(0, -2)</li>
+							<li>(1, -2)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</components>
+		</Vehicles.VehicleDef>
+
+		<Vehicles.VehicleDef ParentName="MM-VF-Vehicle_Pawn">
+			<defName>MM-VF-Thunderclap</defName>
+			<label>ThunderClap</label>
+			<description>The ThunderClap, a massive starship of the Old Republic, is a symbol of power and dominance. With its formidable armaments and imposing presence, it strikes fear into the hearts of its enemies and asserts the authority of its faction across the galaxy.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+			<graphicData>
+				<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+				<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+				<drawSize>(24,24)</drawSize>
+				<shaderType>CutoutComplexPattern</shaderType>
+				<color>(255, 255, 255)</color>
+				<colorTwo>(255, 255, 255)</colorTwo>
+				<colorThree>(255, 255, 255)</colorThree>
+			</graphicData>
+			<rotatable>True</rotatable>
+			<fillPercent>1</fillPercent>
+			<nameable>true</nameable>
+			<buildDef>MM-VF-Thunderclap_Blueprint</buildDef>
+			<size>(16, 18)</size>
+			<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+			<canCaravan>false</canCaravan>
+			<vehicleCategory>Combat</vehicleCategory>
+			<techLevel>Spacer</techLevel>
+			<vehicleType>Air</vehicleType>
+			<statBases>
+				<ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+				<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+				<ArmorRating_Heat>0.95</ArmorRating_Heat>
+				<MarketValue>20000</MarketValue>
+				<Flammability>0.2</Flammability>
+			</statBases>
+			<vehicleStats>
+				<Mass>5000</Mass>
+				<MoveSpeed>25</MoveSpeed>
+				<FlightSpeed>35</FlightSpeed>
+			</vehicleStats>
+			<properties>
+				<vehicleJobLimitations>
+					<li>(RepairVehicle, 5)</li>
+				</vehicleJobLimitations>
+				<roles>
+					<li>
+						<key>pilot</key>
+						<label>Pilot</label>
+						<slots>1</slots>
+						<slotsToOperate>1</slotsToOperate>
+						<handlingTypes>
+							<li>Movement</li>
+						</handlingTypes>
+						<hitbox>
+							<cells>
+								<li>(-1, 3)</li>
+								<li>(-1, -3)</li>
+							</cells>
+						</hitbox>
+					</li>
+				</roles>
+			</properties>
+			<components>
+				<li>
+					<key>LeftHorizontalStabilizer</key>
+					<label>Left Horizontal Stabilizer</label>
+					<health>100</health>
+					<depth>External</depth>
+					<hitbox>
+						<cells>
+							<li>(-1, 1)</li>
+							<li>(-1, -3)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>RightHorizontalStabilizer</key>
+					<label>Right Horizontal Stabilizer</label>
+					<health>100</health>
+					<depth>External</depth>
+					<hitbox>
+						<cells>
+							<li>(1, 1)</li>
+							<li>(1, -3)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>MainEngine</key>
+					<label>Main Engine</label>
+					<health>150</health>
+					<priorityStatEfficiency>true</priorityStatEfficiency>
+					<depth>Internal</depth>
+					<reactors>
+						<li Class="Vehicles.Reactor_Explosive">
+							<indicator>VF_Explosive</indicator>
+							<chance>0.30</chance>
+							<maxHealth>0.25</maxHealth>
+							<radius>4</radius>
+							<damageDef>Flame</damageDef>
+						</li>
+					</reactors>
+					<hitbox>
+						<cells>
+							<li>(-1, 0)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>FuelIntake</key>
+					<label>Fuel Intake</label>
+					<health>80</health>
+					<depth>External</depth>
+					<hitbox>
+						<cells>
+							<li>(-1, 0)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					<categories>
+						<li>FlightSpeed</li>
+					</categories>
+				</li>
+				<li>
+					<key>Chemtank</key>
+					<label>Chemtank</label>
+					<health>120</health>
+					<depth>Internal</depth>
+					<reactors>
+						<li Class="Vehicles.Reactor_FuelLeak"/>
+						<li Class="Vehicles.Reactor_Explosive">
+							<indicator>VF_Explosive</indicator>
+							<chance>0.30</chance>
+							<maxHealth>0.25</maxHealth>
+							<radius>4</radius>
+							<damageDef>Flame</damageDef>
+						</li>
+					</reactors>
+					<hitbox>
+						<cells>
+							<li>(-1, 1)</li>
+							<li>(0, 1)</li>
+							<li>(1, 1)</li>
+						</cells>
+					</hitbox>
+				</li>
+				<li>
+					<key>CargoStorage</key>
+					<label>Cargo Storage</label>
+					<health>80</health>
+					<depth>Internal</depth>
+					<hitbox>
+						<cells>
+							<li>(0,-1)</li>
+							<li>(1, -1)</li>
+							<li>(0, -2)</li>
+							<li>(1, -2)</li>
+						</cells>
+					</hitbox>
+				</li>
+			</components>
+		</Vehicles.VehicleDef>
+
+
+	
+
+	
+</Defs>

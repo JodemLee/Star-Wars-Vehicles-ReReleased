@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<Vehicles.VehicleDef ParentName="{ParentName}">
+		<defName>{defName}</defName>
+		<label>{label}</label>
+		<description>{description}</description>
+		<graphicData>
+			<texPath>{texPath}</texPath>
+			<graphicClass>{graphicClass}</graphicClass>
+			<drawSize>{drawSize}</drawSize>
+			<shaderType>{shaderType}</shaderType>
+			<color>{color}</color>
+			<colorTwo>{colorTwo}</colorTwo>
+			<colorThree>{colorThree}</colorThree>
+		</graphicData>
+		<rotatable>{rotatable}</rotatable>
+		<fillPercent>{fillPercent}</fillPercent>
+		<nameable>{nameable}</nameable>
+		<buildDef>{buildDef}</buildDef>
+		<size>{size}</size>
+		<vehicleMovementPermissions>{vehicleMovementPermissions}</vehicleMovementPermissions>
+		<canCaravan>{canCaravan}</canCaravan>
+		<vehicleCategory>{vehicleCategory}</vehicleCategory>
+		<techLevel>{techLevel}</techLevel>
+		<vehicleType>{vehicleType}</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>{ArmorRating_Blunt}</ArmorRating_Blunt>
+			<ArmorRating_Sharp>{ArmorRating_Sharp}</ArmorRating_Sharp>
+			<ArmorRating_Heat>{ArmorRating_Heat}</ArmorRating_Heat>
+			<MarketValue>{MarketValue}</MarketValue>
+			<Flammability>{Flammability}</Flammability>
+		</statBases>
+		<vehicleStats>
+			<Mass>{Mass}</Mass>
+			<MoveSpeed>{MoveSpeed}</MoveSpeed>
+			<FlightSpeed>{FlightSpeed}</FlightSpeed>
+		</vehicleStats>
+		<properties>
+			<vehicleJobLimitations>
+				<li>{vehicleJobLimitations}</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>{role_key}</key>
+					<label>{role_label}</label>
+					<slots>{role_slots}</slots>
+					<slotsToOperate>{role_slotsToOperate}</slotsToOperate>
+					<handlingTypes>
+						<li>{role_handlingType}</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>{role_hitbox_cells_1}</li>
+							<li>{role_hitbox_cells_2}</li>
+						</cells>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>{component_key_1}</key>
+				<label>{component_label_1}</label>
+				<health>{component_health_1}</health>
+				<depth>{component_depth_1}</depth>
+				<hitbox>
+					<cells>
+						<li>{component_hitbox_cells_1_1}</li>
+						<li>{component_hitbox_cells_1_2}</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>{component_category_1}</li>
+				</categories>
+			</li>
+			<li>
+				<key>{component_key_2}</key>
+				<label>{component_label_2}</label>
+				<health>{component_health_2}</health>
+				<depth>{component_depth_2}</depth>
+				<hitbox>
+					<cells>
+						<li>{component_hitbox_cells_2_1}</li>
+						<li>{component_hitbox_cells_2_2}</li>
+					</cells>
+				</hitbox>
+				<categories>
+					<li>{component_category_2}</li>
+				</categories>
+			</li>
+			<!-- Add more components as needed -->
+		</components>
+	</Vehicles.VehicleDef>
+	
+
+</Defs>

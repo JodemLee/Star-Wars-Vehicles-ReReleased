@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>MM-VF-AA5HeavySpeeder_Blueprint</defName>
+		<label>A-A5 Heavy Speeder VF</label>
+		<description>Trast Heavy Transports' A-A5 speeder truck was designed to transport heavy cargo across rough worlds, and was covered in armored plates to protect it and its cargo from harsh environmental conditions.\n\nA relatively general purpose helicopter, it has both excellent cargo and passenger capacity. Has some armour for an aircraft, allowing it to deploy and extract from hot zones.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<size>(3, 9)</size>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>8850</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>740</Steel>
+			<ComponentIndustrial>28</ComponentIndustrial>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-AA5HeavySpeeder</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+
+	<Vehicles.VehicleBuildDef Abstract="True" Name="MM-VF-Vehicle_Blueprint" ParentName="VehicleBaseBuildable">
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<size>(6, 8)</size>
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24998</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>5800</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-EbonHawk_Blueprint</defName>
+		<label>Ebon Hawk VF</label>
+		<description>The Ebon Hawk, a legendary vessel, renowned for its versatility and resilience, epitomizes the epitome of starship engineering. Originally a freighter, it has been extensively modified for various roles, from smuggling to combat, earning its reputation as a vessel capable of navigating the most treacherous of spaceways. \n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x2, Passenger x6\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24998</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>5800</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-EbonHawk</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Aurek_Blueprint</defName>
+		<label>Aurek VF</label>
+		<description>An armoured transport aircraft, the Louie is a robust and agile mobile mode of transportation. Doesn’t require a landing strip and won’t fall apart at the first sign of fire.\n\nA relatively general purpose helicopter, it has both excellent cargo and passenger capacity. Has some armour for an aircraft, allowing it to deploy and extract from hot zones.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Aurek/Aurek_red</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>3000</MaxHitPoints>
+			<WorkToBuild>24998</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>5800</Steel>
+			<Plasteel>1500</Plasteel>
+			<ComponentIndustrial>25</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Cloth>660</Cloth>
+			<Gold>10</Gold>
+			<Silver>4500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Aurek</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Basilisk_Blueprint</defName>
+		<label>Basilisk VF</label>
+		<description>An agile and heavily armed assault airspeeder, the Basilisk is a formidable presence on the battlefield. With its advanced weaponry and high-speed capabilities, it excels at hit-and-run tactics and close air support missions.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6000</Steel>
+			<Plasteel>1800</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Cloth>700</Cloth>
+			<Gold>15</Gold>
+			<Silver>5000</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Basilisk</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Defender_Blueprint</defName>
+		<label>Defender VF</label>
+		<description>A versatile starfighter used by the Galactic Republic, the Defender excels in both space combat and atmospheric dogfights. With its advanced shielding and weaponry, it's a formidable adversary against enemy forces.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Astromech Droid x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6000</Steel>
+			<Plasteel>1800</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Cloth>700</Cloth>
+			<Gold>15</Gold>
+			<Silver>5000</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Defender</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Fury_Blueprint</defName>
+		<label>Fury VF</label>
+		<description>The Fury, a high-speed starfighter utilized by the Galactic Republic, is designed for rapid deployment and reconnaissance missions. With its advanced technology and sleek design, it's capable of outmaneuvering most adversaries in both space and atmospheric combat.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6000</Steel>
+			<Plasteel>1800</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Cloth>700</Cloth>
+			<Gold>15</Gold>
+			<Silver>5000</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Fury</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-HammerHead_Blueprint</defName>
+		<label>HammerHead VF</label>
+		<description>The HammerHead, a versatile starship utilized by the Galactic Republic, is known for its durability and firepower. It serves various roles, from escort missions to heavy assault, making it a formidable presence in any engagement.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Hammerhead/Hammerhead_red</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>4500</MaxHitPoints>
+			<WorkToBuild>35000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6500</Steel>
+			<Plasteel>2000</Plasteel>
+			<ComponentIndustrial>35</ComponentIndustrial>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Cloth>800</Cloth>
+			<Gold>20</Gold>
+			<Silver>5500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-HammerHead</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Mantis_Blueprint</defName>
+		<label>Mantis VF</label>
+		<description>The Mantis, a nimble starship utilized by the Galactic Republic, is renowned for its agility and precision. It excels in reconnaissance missions and hit-and-run tactics, capable of swiftly evading enemy fire while delivering precise strikes.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6000</Steel>
+			<Plasteel>1800</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Cloth>700</Cloth>
+			<Gold>15</Gold>
+			<Silver>5000</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Mantis</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Phantom_Blueprint</defName>
+		<label>Phantom VF</label>
+		<description>The Phantom, a stealthy starship utilized by the Galactic Republic, is adept at infiltration and covert operations. Equipped with advanced cloaking technology, it can slip past enemy defenses undetected, making it invaluable for espionage and surprise attacks.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+	
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6000</Steel>
+			<Plasteel>1800</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Cloth>700</Cloth>
+			<Gold>15</Gold>
+			<Silver>5000</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Phantom</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-SithInterceptor_Blueprint</defName>
+		<label>Sith Interceptor VF</label>
+		<description>The Sith Interceptor, a swift and deadly starship utilized by the Sith Empire, is designed for swift strikes and aerial superiority. With its advanced weaponry and agile maneuverability, it dominates the skies and strikes fear into the hearts of its enemies.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+	
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<Steel>6000</Steel>
+			<Plasteel>1800</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Cloth>700</Cloth>
+			<Gold>15</Gold>
+			<Silver>5000</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-SithInterceptor</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Supremacy_Blueprint</defName>
+		<label>Supremacy VF</label>
+		<description>The Supremacy, a formidable starship hailing from the Old Republic, exudes power and dominance. With its massive size and advanced technology, it strikes fear into the hearts of its adversaries while projecting the might of its faction across the galaxy.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(24,24)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>10000</MaxHitPoints>
+			<WorkToBuild>50000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>8</Beauty>
+		</statBases>
+		<researchPrerequisites>
+			<!-- Add any research prerequisites here if required -->
+		</researchPrerequisites>
+		<costList>
+			<Steel>8000</Steel>
+			<Plasteel>2500</Plasteel>
+			<ComponentIndustrial>50</ComponentIndustrial>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Cloth>1000</Cloth>
+			<Gold>20</Gold>
+			<Silver>7500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Supremacy</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleBuildDef ParentName="MM-VF-Vehicle_Blueprint">
+		<defName>MM-VF-Thunderclap_Blueprint</defName>
+		<label>ThunderClap</label>
+		<description>The ThunderClap, a formidable starship hailing from the Old Republic, exudes power and dominance. With its massive size and advanced technology, it strikes fear into the hearts of its adversaries while projecting the might of its faction across the galaxy.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Reactor Core</description>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(24,24)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>10000</MaxHitPoints>
+			<WorkToBuild>50000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>8</Beauty>
+		</statBases>
+		<researchPrerequisites>
+			<!-- Add any research prerequisites here if required -->
+		</researchPrerequisites>
+		<costList>
+			<Steel>8000</Steel>
+			<Plasteel>2500</Plasteel>
+			<ComponentIndustrial>50</ComponentIndustrial>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Cloth>1000</Cloth>
+			<Gold>20</Gold>
+			<Silver>7500</Silver>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>MM-VF-Thunderclap</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+	
+	
+
+</Defs>

@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Prop Defs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-AA5HeavySpeeder_prop</defName>
+		<label>A-A5 Heavy Speeder Prop</label>
+		<description>A-A5 Heavy Speeder Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>1_Repulsor/RepulsorTruck/truck</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,9</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-AA5HeavySpeeder_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_Repulsor</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-EbonHawk_prop</defName>
+		<label>Ebon Hawk Prop</label>
+		<description>Ebon Hawk Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Ebon Hawk/EbonHawk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>13,14</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-EbonHawk_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-DefenderCorvette_prop</defName>
+		<label>Defender Corvette Prop</label>
+		<description>Defender Corvette Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Defender/Defender</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>13,17</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-DefenderCorvette_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-BT7Thunderclap_prop</defName>
+		<label>BT-7 Thunderclap Prop</label>
+		<description>BT-7 Thunderclap Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Thunderclap/Thunderclap</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>15,11</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-BT7Thunderclap_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-FuryInterceptor_prop</defName>
+		<label>Fury Interceptor Prop</label>
+		<description>Fury Interceptor Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Fury/Fury</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>11,13</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-FuryInterceptor_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-SithInterceptor_prop</defName>
+		<label>Sith Interceptor Prop</label>
+		<description>Sith Interceptor Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Sith Interceptor/SithInterceptor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>3,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-SithInterceptor_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-PhantomPrototype_prop</defName>
+		<label>Phantom Prototype Prop</label>
+		<description>Phantom Prototype Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Phantom/Phantom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>15,17</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-PhantomPrototype_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-BasiliskWarDroid_prop</defName>
+		<label>Basilisk War Droid Prop</label>
+		<description>Basilisk War Droid Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Basilisk/Basilisk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>12,11</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-BasiliskWarDroid_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-MantisPatrolCraft_prop</defName>
+		<label>Mantis Patrol Craft Prop</label>
+		<description>Mantis Patrol Craft Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Mantis/Mantis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>13,14</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-MantisPatrolCraft_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-XSFreighter_prop</defName>
+		<label>XS Freighter Prop</label>
+		<description>XS Freighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/xs/xs</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>12,14</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-XSFreighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-SupremacyMKVIStarfighter_prop</defName>
+		<label>Supremacy (MKVI) Starfighter Prop</label>
+		<description>Supremacy (MKVI) Starfighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>2_Old Republic/Supremacy/Supremacy</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-SupremacyMKVIStarfighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_AncientShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-BTLBYWing_prop</defName>
+		<label>BTL-B Y-Wing Prop</label>
+		<description>BTL-B Y-Wing Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/YWing/YWing</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>4,9</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-BTLBYWing_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-SoullessOne_prop</defName>
+		<label>Soulless One Prop</label>
+		<description>Soulless One Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/Belbullab/Belbullab_SoulessOne</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(9,9)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,8</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-SoullessOne_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-DroidGunship_prop</defName>
+		<label>Droid Gunship Prop</label>
+		<description>Droid Gunship Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/HMP/hmp</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>9,10</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-DroidGunship_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-Scimitar_prop</defName>
+		<label>Scimitar Prop</label>
+		<description>Scimitar Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/Scimitar/Scimitar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(15,15)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>7,11</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Scimitar_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-SheathipedeShuttle_prop</defName>
+		<label>Sheathipede Shuttle Prop</label>
+		<description>Sheathipede Shuttle Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/Sheathipede/Sheathipede</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,7</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-SheathipedeShuttle_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-DroidLandingCraft_prop</defName>
+		<label>Droid Landing Craft Prop</label>
+		<description>Droid Landing Craft Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>3_Clone Wars/C9979/C9979</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(28,28)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>26,12</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-DroidLandingCraft_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-FangFighter_prop</defName>
+		<label>Fang Fighter Prop</label>
+		<description>Fang Fighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>5_Donated/Fang/Fang</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-FangFighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-KomrkFighter_prop</defName>
+		<label>Komrk Fighter Prop</label>
+		<description>Komrk Fighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>5_Donated/Gauntlet/Gauntlet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>10,10</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-KomrkFighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_CWShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-MoldyCrow_prop</defName>
+		<label>Moldy Crow Prop</label>
+		<description>Moldy Crow Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Moldy Crow/Crow</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(9,9)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,8</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-MoldyCrow_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-RavensClaw_prop</defName>
+		<label>Raven's Claw Prop</label>
+		<description>Raven's Claw Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Ravens Claw/claw</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(14,14)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>9,13</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-RavensClaw_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-TIEFighter_prop</defName>
+		<label>TIE Fighter Prop</label>
+		<description>TIE Fighter Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/TIE/TIE</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>4,4</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-TIEFighter_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-TIEBomber_prop</defName>
+		<label>TIE Bomber Prop</label>
+		<description>TIE Bomber Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/TIE Bomber/TIE_Bomber</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>5,5</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-TIEBomber_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-LambdaShuttle_prop</defName>
+		<label>Lambda Shuttle Prop</label>
+		<description>Lambda Shuttle Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Lambda/Lambda</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>6,8</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-LambdaShuttle_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-Slave1-Def_prop</defName>
+		<label>Slave 1 Prop</label>
+		<description>Slave 1 Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Slave 1/Slave1</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(11,11)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>8,10</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Slave1-Def_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-BTLS3YWing_prop</defName>
+		<label>BTL-S3 Y-Wing Prop</label>
+		<description>BTL-S3 Y-Wing Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Y-Wing/ywing</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(8,8)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>4,8</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-BTLS3YWing_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-UWing_prop</defName>
+		<label>U-Wing Prop</label>
+		<description>U-Wing Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/U-Wing/uwing</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(12,12)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>4,12</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-UWing_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-Ghost_prop</defName>
+		<label>Ghost Prop</label>
+		<description>Ghost Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Ghost/ghost</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>13,17</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Ghost_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-MilleniumFalcon_prop</defName>
+		<label>Millenium Falcon Prop</label>
+		<description>Millenium Falcon Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>4_GCW/Millennium Falcon/MillenniumFalcon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(18,18)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>13,17</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-MilleniumFalcon_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MM-SS-Kimogila_prop</defName>
+		<label>Kimogila Prop</label>
+		<description>Kimogila Prop</description>
+		<rotatable>True</rotatable>
+		<graphicData>
+			<texPath>5_Donated/Kimogila/Kimogila</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(10,10)</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawRotated>True</drawRotated>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<size>7,7</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>MM_StarWarsShipBuildTab</designationCategory>
+		<designatorDropdown>MM-SS-Kimogila_Designator</designatorDropdown>
+		<uiIconScale>0.75</uiIconScale>
+		<researchPrerequisites>
+			<li>MM_Research_EmpireShipDesigns</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+</Defs>
